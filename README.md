@@ -52,8 +52,10 @@ N/A
 ![](Wireframe3.png)
 ![](Wireframe.png)
 # Component Heirarchy
-- Login
+- Nav
+- Login/Register
 - GameList
   - SingleGame
     - ReviewGame
 - AddGame
+- Footer
