@@ -7,6 +7,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const app = express();
+const { Game } = require('./models.js')
 
 app.use(cors())
 app.use(logger('dev'));
@@ -14,6 +15,14 @@ app.use(bodyParser.json());
 app.use('/auth/', userRouter);
 app.use('/users/:userId/games', gameRouter);
 app.use('/users/:userId/games/:gamesId/reviews', reviewRouter);
+app.get('/games', async (req, res) => {
+  const games = await Game.findAll();
+  res.json(games)
+})
+app.get('/games/:id', async (req, res) => {
+  const game = await Game.findByPk(id);
+  res.json(game)
+})
 
 
 app.use((err, req, res, next) => {
