@@ -1,5 +1,6 @@
 
 # Gamium
+![](TreeStars.jpg)
 
 A gaming website for Indie Game Creators to share their games with the world and receive reviews and rankings.
 Users will be able to share their games and/or leave reviews on games.
@@ -51,3 +52,8 @@ N/A
 ![](Wireframe3.png)
 ![](Wireframe.png)
 # Component Heirarchy
+- Login
+- GameList
+  - SingleGame
+    - ReviewGame
+- AddGame
