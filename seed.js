@@ -1,23 +1,25 @@
-const { User, Games } = require('./models');
+const { User, Game } = require('./models');
 
 const main = async () => {
 
-  await Games.destroy({
+  await Game.destroy({
     where: {},
   });
-  await Users.destroy({
+  await User.destroy({
     where: {},
   })
+
   const admin = await User.create({
     username: 'admin',
-    password_digest: 'poop'
+    password_digest: '$2b$11$.nYwXq1np8noZ.0GMQAb5ebyYVFQpaRQrs4.G4SapO5iQhFaScDwe'
   })
+
   const stayWild = await Game.create({
     name: 'Stay-Wild',
     image_url: 'https://github.com/mtswaim/Stay-Wild-Game/blob/master/Pokeball2.png',
     description: 'Choose any Pokemon your heart desires. Once you have selected a Pokemon you enter the game at one of three different difficulties. The objective of the game is to surivive for as long a possible without being caught by a trainer. Good Luck!',
     reviews: '',
-  }),
+  });
   const pokemonMaster = await Game.create({
     name: 'Pokemon-Master',
     image_url: 'https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/30/1469435925-maxresdefault-3.jpg?resize=480:*',
