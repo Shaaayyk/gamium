@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { User } = require('../models');
-const { hashPassword, genToken, checkPassword } = require('../services/auth');
+const { hashPassword, genToken, restrict, checkPassword } = require('../services/auth');
 
 const userRouter = Router();
 
@@ -18,7 +18,7 @@ const buildAuthResponse = (user) => {
   };
 };
 
-userRouter.post('/register', async (req, res) => {
+userRouter.post('/register', async (req, res, next) => {
   try {
     const password_digest = await hashPassword(req.body.password);
     const { username } = req.body;
@@ -36,7 +36,7 @@ userRouter.post('/register', async (req, res) => {
   }
 });
 
-userRouter.post('/login', async (req, res) => {
+userRouter.post('/login', async (req, res, next) => {
   try {
     const user = await User.findOne({
       where: {
@@ -56,7 +56,7 @@ userRouter.post('/login', async (req, res) => {
   }
 });
 
-userRouter.get('/verify', restrict, (req, res) => {
+userRouter.get('/verify', restrict, (req, res, next) => {
   const user = res.locals.user;
   res.json(user);
 })

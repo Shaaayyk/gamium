@@ -1,7 +1,7 @@
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const userRouter = require('./routes/userRouter.js');
-const reviewRouter = require('/routes/reviewRouter.js');
+const reviewRouter = require('./routes/reviewRouter.js');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');

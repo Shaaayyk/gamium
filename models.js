@@ -11,7 +11,7 @@ const sequelize = new Sequelize({
 
 class User extends Sequelize.Model { };
 
-Quote.init({
+User.init({
   username: Sequelize.STRING,
   password_digest: Sequelize.STRING
 }, {
@@ -47,9 +47,9 @@ User.hasMany(Review, { onDelete: 'cascade' })
 Review.belongsTo(User)
 
 module.exports = {
-  Games,
-  Users,
-  Reviews,
+  Game,
+  User,
+  Review,
   sequelize
 }
 
