@@ -1,3 +1,4 @@
+
 # Gamium
 
 A gaming website for Indie Game Creators to share their games with the world and receive reviews and rankings.
@@ -5,17 +6,21 @@ Users will be able to share their games and/or leave reviews on games.
 
 # Challenges
 
-Building the backend for Auth. 
+- Building the backend 
+- Auth. 
 
 # Mvp
-A site that shows a list of games with clickable links to those games. The Links contain images and info on the game the user selected.
+A site that shows a list of games with clickable links to those games. 
+The Links contain images and info on the game the user selected.
 ## Backend
 
 Table for users, games and reviews.
 
 ## Users
 
-Create a register/login page. Profile page for users.
+- Create a register/login page. Profile page for users.
+- Upload screen for games.
+- (post)Rate other users games.
 
 ## Lander Page
 
@@ -32,14 +37,17 @@ Ranking and rating games.
 # Features
 
 Shareable content to share with the world to test out Indie Games.
+Allows game designers to get feedback on their projects from other game designers.
+Introduces users to games they might not otherwise find.
 
 # ERD
 
-![](https://drive.google.com/file/d/1_SCiKPwkgSIX4S5qQqFYWzt_AA3RwvEp/view?usp=sharing)
+![](ERD.png)
 
 # Backend API Endpoints
-
+N/A
 # Wireframes
-![](https://wireframe.cc/bLNcrf)
-![](https://wireframe.cc/7T2x7K)
+![](Wireframe2.png)
+![](Wireframe3.png)
+![](Wireframe.png)
 # Component Heirarchy
