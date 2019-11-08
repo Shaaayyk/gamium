@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
 
 
 const sequelize = new Sequelize({
@@ -8,19 +8,48 @@ const sequelize = new Sequelize({
     underscored: true
   }
 });
-class Games extends Sequelize.Model { }
 
-Games.init({
+class User extends Sequelize.Model { };
+
+Quote.init({
+  username: Sequelize.STRING,
+  password_digest: Sequelize.STRING
+}, {
+  sequelize,
+  modelName: 'user'
+});
+
+class Game extends Sequelize.Model { };
+
+Game.init({
   name: Sequelize.STRING,
   image_url: Sequelize.TEXT,
   description: Sequelize.TEXT,
-  review: Sequelize.TEXT
 }, {
   sequelize,
   modelName: 'game'
 });
 
+class Review extends Sequelize.Model { };
+
+Review.init({
+  review: Sequelize.TEXT(500)
+}, {
+  sequelize,
+  modelName: 'review'
+});
+
+User.hasMany(Game, { onDelete: 'cascade' });
+Game.belongsTo(User);
+Game.hasMany(Review, { onDelete: 'cascade' })
+Review.belongsTo(Game)
+User.hasMany(Review, { onDelete: 'cascade' })
+Review.belongsTo(User)
+
 module.exports = {
   Games,
+  Users,
+  Reviews,
   sequelize
-} 
+}
+
