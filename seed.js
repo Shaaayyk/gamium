@@ -26,11 +26,17 @@ const main = async () => {
     description: 'Battle it out with Pikachu against the dreadful mewtwo. Can you become the next Pokemon Master? Find out now!',
     reviews: '',
 
-  })
+  });
+  const deckBuilder = await Game.create({
+    name: 'Deck-Builder',
+    image_url: 'DeckBuilder.png',
+    description: 'Choose your cards wisely! Discover hundreds of cards to add to your deck with each attempt at climbing the Spire. Select cards that work together to efficiently dispatch foes and reach the top.',
+    reviews: ''
+  });
 
   // await stayWild.addReview()
   // await pokemonMaster.addReview()
-  await admin.addGame([stayWild, pokemonMaster])
+  await admin.addGame([stayWild, pokemonMaster, deckBuilder])
   // await admin.addReview()
 
   process.exit()
