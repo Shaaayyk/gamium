@@ -1,6 +1,7 @@
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const userRouter = require('./routes/userRouter.js');
+const gameRouter = require('./routes/gameRouter.js');
 const reviewRouter = require('./routes/reviewRouter.js');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -11,6 +12,7 @@ app.use(cors())
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use('/auth/', userRouter);
+app.use('/users/:userId/games', gameRouter);
 app.use('/users/:userId/games/:gamesId/reviews', reviewRouter);
 
 
