@@ -1,6 +1,6 @@
 
 # Gamium
-![](TreeStars.jpg)
+![](./Images/TreeStars.jpg)
 
 A gaming website for Indie Game Creators to share their games with the world and receive reviews and rankings.
 Users will be able to share their games and/or leave reviews on games.
@@ -43,14 +43,14 @@ Introduces users to games they might not otherwise find.
 
 # ERD
 
-![](ERD.png)
+![](./Images/ERD.png)
 
 # Backend API Endpoints
 N/A
 # Wireframes
-![](Wireframe2.png)
-![](Wireframe3.png)
-![](Wireframe.png)
+![](./Images/Wireframe2.png)
+![](./Images/Wireframe3.png)
+![](./Images/Wireframe.png)
 # Component Heirarchy
 - Nav
 - Login/Register
