@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
-import { getAllGames, registerUser, loginUser, verifyUser } from './services/api-helper'
+import { getAllGames, registerUser, loginUser, verifyUser, deleteGame } from './services/api-helper'
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import GameList from './components/GameList';
@@ -38,6 +38,16 @@ class App extends Component {
       this.setState({ currentUser })
       this.props.history.push('/')
     }
+  }
+  destroyGame = async (userId, gameId) => {
+    await deleteGame(userId, gameId)
+    this.setState(prevState => ({
+      games: prevState.games.filter(game => {
+        return game.id !== gameId
+      })
+    }))
+    this.props.history.push('/games')
+    console.log('click')
   }
 
   handleLogout = () => {

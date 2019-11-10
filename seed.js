@@ -26,7 +26,7 @@ const main = async () => {
   });
   const deckBuilder = await Game.create({
     name: 'Deck-Builder',
-    image_url: 'https://imgur.com/4XSX1QN.png',
+    image_url: 'https://i.imgur.com/yEnXMek.png',
     description: 'Choose your cards wisely! Discover hundreds of cards to add to your deck with each attempt at climbing the Spire. Select cards that work together to efficiently dispatch foes and reach the top.',
   });
   const horrorGallery = await Game.create({
