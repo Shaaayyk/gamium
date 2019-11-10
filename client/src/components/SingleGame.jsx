@@ -38,10 +38,10 @@ export default class SingleGame extends Component {
               currentUser && currentUser.id === currentPost.userId && (
                 <>
                   <button onClick={() => {
-                  this.props.destroyGame(currentUser.id, currentGame.id)
+                    this.props.destroyGame(currentUser.id, currentGame.id)
                   }}>
                     Delete</button>
-                  <Link to={`/game/ ${currentGame.id} /edit`}><button>edit</button></Link>
+                  <Link to={`/game/${currentGame.id}/edit`}><button>edit</button></Link>
                 </>
               )
             }
