@@ -9,12 +9,13 @@ import Header from './components/Header'
 import SingleGame from './components/SingleGame'
 import EditGames from './components/EditGames';
 import CreateGameForm from './components/CreateGameForm'
+import UserProfile from './components/UserProfile'
 
 class App extends Component {
   state = {
     currentUser: '',
     games: [],
-    review: [],
+    reviews: [],
     authErrorMessage: ''
   }
 
@@ -114,6 +115,7 @@ class App extends Component {
             currentUser={this.state.currentUser}
             gameId={props.match.params.id}
             destroyGame={this.destroyGame}
+            reviews={this.state.reviews}
           />
         )}
         />
@@ -128,6 +130,11 @@ class App extends Component {
             games={this.state.games}
             updateGame={this.updateGame}
             gameId={props.match.params.id}
+          />
+        )} />
+        <Route path='/users/:id' render={(props) => (
+          <UserProfile
+            currentUser={this.state.currentUser}
           />
         )} />
       </div>
