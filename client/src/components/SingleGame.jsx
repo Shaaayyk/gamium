@@ -33,15 +33,16 @@ export default class SingleGame extends Component {
             <h1>{currentGame.name}</h1>
             <h3>Description</h3>
             <p>{currentGame.description}</p>
-            <img src={currentGame.image_url} />
+            <img src={currentGame.image_url} alt={currentGame.name} />
             {
-              currentUser && currentUser.id === currentPost.userId && (
+              currentUser && currentUser.id === currentGame.userId && (
                 <>
                   <button onClick={() => {
-                  this.props.destroyGame(currentUser.id, currentGame.id)
+                    this.props.destroyGame(currentUser.id, currentGame.id)
                   }}>
-                    Delete</button>
-                  <Link to={`/game/ ${currentGame.id} /edit`}><button>edit</button></Link>
+                    Delete
+                    </button>
+                  <Link to={`/game/${currentGame.id}/edit`}><button>edit</button></Link>
                 </>
               )
             }
