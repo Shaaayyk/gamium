@@ -6,6 +6,7 @@ import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import GameList from './components/GameList';
 import Header from './components/Header'
+import SingleGame from './components/SingleGame'
 
 class App extends Component {
   state = {
@@ -89,8 +90,16 @@ class App extends Component {
             authErrorMessage={this.state.authErrorMessage}
           />
         )} />
+        <Route exact path='/games/:id' render={(props) => (
+          <SingleGame
+            games={this.state.games}
+            gameId={props.match.params.id}
+            destroyGame={this.destroyGame}
+          />
+        )}
+        />
       </div>
-    );
+    )
   }
 }
 
