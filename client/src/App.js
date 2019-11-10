@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
-import { getAllGames, registerUser, loginUser, verifyUser, deleteGame } from './services/api-helper'
+import { getAllGames, registerUser, loginUser, verifyUser, deleteGame, putGame, postGame } from './services/api-helper'
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import GameList from './components/GameList';
 import Header from './components/Header'
 import SingleGame from './components/SingleGame'
 import EditGames from './components/EditGames';
+import CreateGameForm from './components/CreateGameForm'
+import UserProfile from './components/UserProfile'
 
 class App extends Component {
   state = {
     currentUser: '',
     games: [],
-    review: [],
+    reviews: [],
     authErrorMessage: ''
   }
 
@@ -48,7 +50,6 @@ class App extends Component {
       })
     }))
     this.props.history.push('/games')
-    console.log('click')
   }
 
   handleLogout = () => {
@@ -68,9 +69,16 @@ class App extends Component {
   updateGame = async (id, gamesData) => {
     const updatedGame = await putGame(id, gamesData);
     this.setState(prevState => ({
-      games: prevState.games.map(game => game.id === parseInt(id) ? updatedPost : post)
+      games: prevState.games.map(game => game.id === parseInt(id) ? updatedGame : game)
     }))
     this.props.history.push("/")
+  }
+  createGame = async (userId, gameData) => {
+    const newGame = await postGame(userId, gameData)
+    this.setState(prevState => ({
+      games: [...prevState.games, newGame]
+    }))
+    this.props.history.push('/games')
   }
 
   async componentDidMount() {
@@ -104,17 +112,29 @@ class App extends Component {
         <Route exact path='/games/:id' render={(props) => (
           <SingleGame
             games={this.state.games}
-            currentUser={this.currentUser}
+            currentUser={this.state.currentUser}
             gameId={props.match.params.id}
             destroyGame={this.destroyGame}
+            reviews={this.state.reviews}
           />
         )}
         />
-        <Route path='/games/:id/edit' render={(props) => (
+        <Route path='/games/new' render={() => (
+          <CreateGameForm
+            createGame={this.createGame}
+            currentUser={this.currentUser}
+          />
+        )} />
+        <Route path='/game/:id/edit' render={(props) => (
           <EditGames
             games={this.state.games}
             updateGame={this.updateGame}
             gameId={props.match.params.id}
+          />
+        )} />
+        <Route path='/users/:id' render={(props) => (
+          <UserProfile
+            currentUser={this.state.currentUser}
           />
         )} />
       </div>

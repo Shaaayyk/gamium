@@ -71,6 +71,10 @@ export const deleteGame = async (userId, gameId) => {
   const resp = await api.delete(`/users/${userId}/games/${gameId}`)
   return resp.data
 }
+export const getReviews = async (userId, gameId) => {
+  const resp = await api.get(`/users/${userId}/games/${gameId}/reviews`)
+  return resp.data
+}
 
 export const postReview = async (userId, gameId, reviewData) => {
   const resp = await api.post(`/users/${userId}/games/${gameId}/reviews`, reviewData)
