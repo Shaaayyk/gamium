@@ -11,6 +11,7 @@ img {
 #game-name {
   margin: 0;
   margin-bottom: 50px;
+  text-decoration: none;
 }
 #game-box {
   border-bottom: solid black 2px;
