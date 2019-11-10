@@ -2,3 +2,18 @@ img {
   width: 500px;
   height: 350px
 }
+#game-list {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#game-name {
+  margin: 0;
+  margin-bottom: 50px;
+  text-decoration: none;
+}
+#game-box {
+  border-bottom: solid black 2px;
+  margin-top: 10px;
+}

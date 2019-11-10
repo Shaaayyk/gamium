@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getAllGames } from './services/api-helper'
+import { getAllGames, } from './services/api-helper'
 import GameList from './components/GameList'
+import { Route, Link, withRouter } from 'react-router-dom'
+import SingleGame from './components/SingleGame'
+
 
 class App extends Component {
   state = {
@@ -33,9 +36,18 @@ class App extends Component {
     return (
       <div className="App" >
         <GameList games={this.state.games} />
+
+        <Route exact path='/games/:id' render={(props) => (
+          <SingleGame
+            games={this.state.games}
+            gameId={props.match.params.id}
+            destroyGame={this.destroyGame}
+          />
+        )}
+        />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default withRouter(App);
