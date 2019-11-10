@@ -25,6 +25,7 @@ export default class SingleGame extends Component {
 
   render() {
     const { currentGame } = this.state
+    const { currentUser } = this.props;
     return (
       <div id='game-info'>
         {currentGame && (
@@ -33,11 +34,17 @@ export default class SingleGame extends Component {
             <h3>Description</h3>
             <p>{currentGame.description}</p>
             <img src={currentGame.image_url} />
-            <button onClick={() => {
-              this.props.destroyGame(currentGame.id)
-            }}>
-              Delete</button>
-            <Link to={`/game/ ${currentGame.id} /edit`}><button>edit</button></Link>
+            {
+              currentUser && currentUser.id === currentPost.userId && (
+                <>
+                  <button onClick={() => {
+                    this.props.destroyGame(currentGame.id)
+                  }}>
+                    Delete</button>
+                  <Link to={`/game/ ${currentGame.id} /edit`}><button>edit</button></Link>
+                </>
+              )
+            }
           </>
         )
         }
