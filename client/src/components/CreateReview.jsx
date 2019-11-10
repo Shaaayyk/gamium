@@ -15,6 +15,7 @@ export default class CreateReview extends Component {
 
 
   render() {
+    console.log(this.props.gameId)
     return (
       <div>
         <form onSubmit={(e) => {
