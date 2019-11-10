@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CreateReview from './CreateReview'
-import { postReview, getReviews } from '../services/api-helper'
+import { postReview, getReviews, getOneGame } from '../services/api-helper'
 import ReviewList from './ReviewList'
 
 export default class SingleGame extends Component {
