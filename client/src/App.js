@@ -7,6 +7,7 @@ import LoginForm from './components/LoginForm';
 import GameList from './components/GameList';
 import Header from './components/Header'
 import SingleGame from './components/SingleGame'
+import EditGames from './components/EditGames';
 
 class App extends Component {
   state = {
@@ -64,6 +65,14 @@ class App extends Component {
     }
   }
 
+  updateGame = async (id, gamesData) => {
+    const updatedGame = await putGame(id, gamesData);
+    this.setState(prevState => ({
+      games: prevState.games.map(game => game.id === parseInt(id) ? updatedPost : post)
+    }))
+    this.props.history.push("/")
+  }
+
   async componentDidMount() {
     const games = await getAllGames()
     this.setState({
@@ -71,14 +80,6 @@ class App extends Component {
     })
     this.handleVerify();
   }
-
-
-
-
-
-
-
-
 
   render() {
     return (
@@ -103,11 +104,19 @@ class App extends Component {
         <Route exact path='/games/:id' render={(props) => (
           <SingleGame
             games={this.state.games}
+            currentUser={this.currentUser}
             gameId={props.match.params.id}
             destroyGame={this.destroyGame}
           />
         )}
         />
+        <Route path='/games/:id/edit' render={(props) => (
+          <EditGames
+            games={this.state.games}
+            updateGame={this.updateGame}
+            gameId={props.match.params.id}
+          />
+        )} />
       </div>
     )
   }
