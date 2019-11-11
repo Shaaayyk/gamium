@@ -16,7 +16,8 @@ reviewRouter.route('/')
     try {
       const review = await Review.create({
         ...req.body,
-        userId: res.locals.user.id
+        userId: res.locals.user.id,
+        gameId: res.locals.game.id
       });
       res.json(review);
     } catch (e) {
