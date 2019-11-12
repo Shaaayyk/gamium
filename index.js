@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const app = express();
 const { Game } = require('./models.js')
+const { User } = require('./models.js')
 
 app.use(cors())
 app.use(logger('dev'));
@@ -20,10 +21,17 @@ app.get('/games', async (req, res) => {
   res.json(games)
 })
 app.get('/games/:id', async (req, res) => {
-  const game = await Game.findByPk(id);
+  const game = await Game.findByPk(req.params.id);
   res.json(game)
 })
-
+app.get('/users', async (req, res) => {
+  const users = await User.findAll();
+  res.json(users)
+})
+app.get('/users/:id', async (req, res) => {
+  const user = await User.findByPk(req.params.id);
+  res.json(user)
+})
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

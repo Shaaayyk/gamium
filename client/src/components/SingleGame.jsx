@@ -1,19 +1,22 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import CreateReview from './CreateReview';
-import { postReview, getReviews, getOneGame } from '../services/api-helper';
-import ReviewList from './ReviewList';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import CreateReview from './CreateReview'
+import { postReview, getReviews, getOneGame, getOneUser } from '../services/api-helper'
+import ReviewList from './ReviewList'
 import axios from 'axios';
+
 
 export default class SingleGame extends Component {
   state = {
     currentGame: null,
-    reviews: []
+    reviews: [],
+    user: ''
   }
 
   async componentDidMount() {
-    console.log(this.props.games)
-    this.setCurrentGame()
+
+    await this.setCurrentGame()
+    await this.setUser(this.state.currentGame.userId)
     const reviews = await getReviews(this.props.gameId)
     this.setState({
       reviews
@@ -34,6 +37,7 @@ export default class SingleGame extends Component {
     this.setState({
       currentGame
     })
+
   }
 
   createReview = async (userId, gameId, reviewData) => {
@@ -43,11 +47,22 @@ export default class SingleGame extends Component {
     }))
   }
 
+  setUser = async (userId) => {
+    const user = await getOneUser(userId)
+    this.setState({
+      user
+    })
+  }
 
 
   render() {
     const { currentGame } = this.state
     const { currentUser } = this.props;
+    const reviews = this.state.reviews.filter(review => (
+      review.gameId == currentGame.id
+    ))
+    console.log(currentGame)
+    console.log(this.state.reviews)
     return (
       <div id='game-info'>
         {currentGame && (
@@ -56,14 +71,15 @@ export default class SingleGame extends Component {
             <h3>Description</h3>
             <p>{currentGame.description}</p>
             <img src={currentGame.image_url} alt={currentGame.name} />
-            <Link to={`/users/${currentGame.userId}`}>{`${currentGame.userId}`}</Link>
+            <Link to={`/users/${this.state.user.id}/games`}>{`${this.state.user.username}`}</Link>
+
+            <ReviewList
+              reviews={reviews}
+            />
             <CreateReview
               currentUser={currentUser}
               gameId={this.props.gameId}
               createReview={this.createReview}
-            />
-            <ReviewList
-              reviews={this.state.reviews}
             />
             {
               currentUser && currentUser.id === currentGame.userId && (

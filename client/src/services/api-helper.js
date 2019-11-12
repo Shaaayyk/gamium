@@ -78,6 +78,7 @@ export const getReviews = async (gameId) => {
 
 export const postReview = async (gameId, reviewData) => {
   const resp = await api.post(`/games/${gameId}/reviews`, reviewData)
+  console.log(gameId)
   return resp.data
 }
 
@@ -88,5 +89,10 @@ export const putReview = async (reviewId, reviewData) => {
 
 export const deleteReview = async (gameId, reviewId) => {
   const resp = await api.delete(`/games/${gameId}/review/${reviewId}`)
+  return resp.data
+}
+
+export const getOneUser = async (userId) => {
+  const resp = await api.get(`/users/${userId}`)
   return resp.data
 }
