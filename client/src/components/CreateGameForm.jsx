@@ -21,7 +21,7 @@ export default class CreateGameForm extends Component {
       <div>
         <form onSubmit={(e) => {
           e.preventDefault()
-          this.props.createGame(this.props.currentUser, this.state)
+          this.props.createGame(this.props.currentUser.id, this.state)
         }
         }>
           <label htmlFor="name">name</label>
