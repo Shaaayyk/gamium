@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom';
-import { getAllGames, registerUser, loginUser, verifyUser, deleteGame, putGame, postGame } from './services/api-helper'
+import { getAllGames, registerUser, loginUser, verifyUser, deleteGame, putGame, postGame, deleteReview } from './services/api-helper'
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import GameList from './components/GameList';
@@ -16,7 +16,6 @@ class App extends Component {
   state = {
     currentUser: '',
     games: [],
-    reviews: [],
     authErrorMessage: ''
   }
 
@@ -43,15 +42,6 @@ class App extends Component {
       this.props.history.push('/')
     }
   }
-  destroyGame = async (userId, gameId) => {
-    await deleteGame(userId, gameId)
-    this.setState(prevState => ({
-      games: prevState.games.filter(game => {
-        return game.id !== gameId
-      })
-    }))
-    this.props.history.push('/games')
-  }
 
   handleLogout = () => {
     this.setState({
@@ -67,6 +57,16 @@ class App extends Component {
     }
   }
 
+  destroyGame = async (userId, gameId) => {
+    await deleteGame(userId, gameId)
+    this.setState(prevState => ({
+      games: prevState.games.filter(game => {
+        return game.id !== gameId
+      })
+    }))
+    this.props.history.push('/')
+  }
+
   updateGame = async (gameId, gameData) => {
     const updatedGame = await putGame(gameId, gameData);
     this.setState(prevState => ({
@@ -74,6 +74,7 @@ class App extends Component {
     }))
     this.props.history.push("/")
   }
+
   createGame = async (userId, gameData) => {
     const newGame = await postGame(userId, gameData)
     this.setState(prevState => ({
@@ -81,6 +82,8 @@ class App extends Component {
     }))
     this.props.history.push(`/`)
   }
+
+
 
   async componentDidMount() {
     const games = await getAllGames()
@@ -91,7 +94,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.currentUser)
     return (
       <div className="App" >
         <Header currentUser={this.state.currentUser} handleLogout={this.handleLogout} />
@@ -118,6 +120,7 @@ class App extends Component {
             gameId={props.match.params.id}
             destroyGame={this.destroyGame}
             reviews={this.state.reviews}
+            destroyReview={this.destroyReview}
           />
         )}
         />
@@ -137,6 +140,7 @@ class App extends Component {
         <Route path='/users/:id/games' render={(props) => (
           <UserProfile
             currentUser={this.state.currentUser}
+            userId={props.match.params.id}
           />
         )} />
         <Footer />

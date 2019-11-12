@@ -8,7 +8,7 @@ export default class UserProfile extends Component {
   }
 
   componentDidMount() {
-    this.setUserGames()
+    this.setUserGames(this.props.userId)
   }
   componentDidUpdate(prevProps) {
     if (prevProps.gameId !== this.props.gameId) {
@@ -18,6 +18,7 @@ export default class UserProfile extends Component {
 
   setUserGames = async (userId) => {
     const userGames = await getUserGames(userId)
+    console.log(userGames)
     this.setState({ userGames })
   }
 

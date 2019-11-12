@@ -6,7 +6,7 @@ const reviewRouter = Router({ mergeParams: true })
 reviewRouter.route('/')
   .get(async (req, res, next) => {
     try {
-      const reviews = await Review.findAll({ include: 'game' });
+      const reviews = await Review.findAll({ include: ['game', 'user'] });
       res.json(reviews);
     } catch (e) {
       next(e)

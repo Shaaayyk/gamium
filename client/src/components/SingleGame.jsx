@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CreateReview from './CreateReview'
-import { postReview, getReviews, getOneGame, getOneUser } from '../services/api-helper'
+import { postReview, getReviews, getOneGame, getOneUser, deleteReview } from '../services/api-helper'
 import ReviewList from './ReviewList'
 import axios from 'axios';
 
@@ -13,6 +13,15 @@ export default class SingleGame extends Component {
     user: ''
   }
 
+  destroyReview = async (gameId, reviewId) => {
+    await deleteReview(gameId, reviewId)
+    this.setState(prevState => ({
+      reviews: prevState.reviews.filter(review => {
+        return review.id !== reviewId
+      })
+    }))
+  }
+
   async componentDidMount() {
     await this.setCurrentGame()
     await this.setUser(this.state.currentGame.userId)
@@ -21,7 +30,7 @@ export default class SingleGame extends Component {
       reviews
     })
   }
-  componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps) {
     if (prevProps.gameId !== this.props.gameId) {
       this.setCurrentGame()
     }
@@ -70,6 +79,7 @@ export default class SingleGame extends Component {
 
             <ReviewList
               reviews={reviews}
+              destroyReview={this.destroyReview}
             />
             <CreateReview
               currentUser={currentUser}
