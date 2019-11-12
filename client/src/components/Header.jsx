@@ -9,6 +9,9 @@ export default function Header(props) {
         props.currentUser ?
           <div>
             <p>Hello, {props.currentUser.username}</p>
+            <Link to='/games/new'>
+              <button>Add Game</button>
+            </Link>
             <button onClick={props.handleLogout}>Logout</button>
           </div>
           :

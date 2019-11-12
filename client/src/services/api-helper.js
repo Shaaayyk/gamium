@@ -88,7 +88,7 @@ export const putReview = async (reviewId, reviewData) => {
 }
 
 export const deleteReview = async (gameId, reviewId) => {
-  const resp = await api.delete(`/games/${gameId}/review/${reviewId}`)
+  const resp = await api.delete(`/games/${gameId}/reviews/${reviewId}`)
   return resp.data
 }
 
