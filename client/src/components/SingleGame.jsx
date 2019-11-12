@@ -18,16 +18,17 @@ export default class SingleGame extends Component {
     })
   }
   componentDidUpdate(prevProps) {
+    console.log()
     if (prevProps.gameId !== this.props.gameId) {
       this.setCurrentGame()
     }
   }
 
   setCurrentGame = () => {
-    const currentGame = this.props.games.find(game => {
+    const currentGame = this.props.games.filter(game => {
       return game.id === parseInt(this.props.gameId)
     })
-    this.setState({ currentGame })
+    this.setState({ currentGame: currentGame[0] })
   }
   createReview = async (userId, gameId, reviewData) => {
     const newReview = await postReview(userId, gameId, reviewData)
