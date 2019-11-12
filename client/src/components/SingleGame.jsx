@@ -28,10 +28,9 @@ export default class SingleGame extends Component {
   }
 
   setCurrentGame = async () => {
-    const response = await
-      axios.get(`http://localhost:3000/games/${this.props.gameId}`)
+
+    const response = await axios.get(`http://localhost:3000/games/${this.props.gameId}`)
     const currentGame = response.data
-    console.log(currentGame)
     this.setState({
       currentGame
     })
@@ -63,10 +62,10 @@ export default class SingleGame extends Component {
       <div id='game-info'>
         {currentGame && (
           <>
+            <img src={currentGame.image_url} alt={currentGame.name} id='game-pic' />
             <h1>{currentGame.name}</h1>
             <h3>Description</h3>
             <p>{currentGame.description}</p>
-            <img src={currentGame.image_url} alt={currentGame.name} />
             <Link to={`/users/${this.state.user.id}/games`}>{`${this.state.user.username}`}</Link>
 
             <ReviewList
