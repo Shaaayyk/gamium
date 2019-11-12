@@ -10,6 +10,7 @@ import SingleGame from './components/SingleGame'
 import EditGames from './components/EditGames';
 import CreateGameForm from './components/CreateGameForm'
 import UserProfile from './components/UserProfile'
+import Footer from './components/Footer'
 
 class App extends Component {
   state = {
@@ -138,6 +139,7 @@ class App extends Component {
             currentUser={this.state.currentUser}
           />
         )} />
+        <Footer />
       </div>
     )
   }
