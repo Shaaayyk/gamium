@@ -1,3 +1,6 @@
+.App {
+  font-family: 'Orbitron', sans-serif;
+}
 img {
   width: 500px;
   height: 350px
@@ -16,4 +19,15 @@ img {
 #game-box {
   border-bottom: solid black 2px;
   margin-top: 30px;
+}
+footer {
+  height: 50px;
+  padding: 10px;
+  background: rgba(0, 0, 0, .1);
+  text-align: center;
+  align-items: flex-end;
+}
+html {
+  height: 100%;
+  text-align: center;
 }
