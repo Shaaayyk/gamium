@@ -14,7 +14,6 @@ export default class SingleGame extends Component {
   }
 
   async componentDidMount() {
-
     await this.setCurrentGame()
     await this.setUser(this.state.currentGame.userId)
     const reviews = await getReviews(this.props.gameId)
@@ -23,17 +22,14 @@ export default class SingleGame extends Component {
     })
   }
   componentDidUpdate(prevProps) {
-    console.log(prevProps.gameId)
-    console.log(this.props.gameId)
     if (prevProps.gameId !== this.props.gameId) {
       this.setCurrentGame()
     }
   }
 
   setCurrentGame = async () => {
-    const response = await axios.get(`http://localhost:3000/users/1/games/${this.props.gameId}`)
+    const response = await axios.get(`http://localhost:3000/games/${this.props.gameId}`)
     const currentGame = response.data
-    console.log(currentGame)
     this.setState({
       currentGame
     })
@@ -61,16 +57,14 @@ export default class SingleGame extends Component {
     const reviews = this.state.reviews.filter(review => (
       review.gameId == currentGame.id
     ))
-    console.log(currentGame)
-    console.log(this.state.reviews)
     return (
       <div id='game-info'>
         {currentGame && (
           <>
+            <img src={currentGame.image_url} alt={currentGame.name} id='game-pic' />
             <h1>{currentGame.name}</h1>
             <h3>Description</h3>
             <p>{currentGame.description}</p>
-            <img src={currentGame.image_url} alt={currentGame.name} />
             <Link to={`/users/${this.state.user.id}/games`}>{`${this.state.user.username}`}</Link>
 
             <ReviewList
