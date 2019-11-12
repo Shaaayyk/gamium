@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import CreateReview from './CreateReview'
-import { postReview, getReviews, getOneGame } from '../services/api-helper'
-import ReviewList from './ReviewList'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import CreateReview from './CreateReview';
+import { postReview, getReviews, getOneGame } from '../services/api-helper';
+import ReviewList from './ReviewList';
+import axios from 'axios';
 
 export default class SingleGame extends Component {
   state = {
@@ -11,6 +12,7 @@ export default class SingleGame extends Component {
   }
 
   async componentDidMount() {
+    console.log(this.props.games)
     this.setCurrentGame()
     const reviews = await getReviews(this.props.gameId)
     this.setState({
@@ -18,17 +20,22 @@ export default class SingleGame extends Component {
     })
   }
   componentDidUpdate(prevProps) {
+    console.log(prevProps.gameId)
+    console.log(this.props.gameId)
     if (prevProps.gameId !== this.props.gameId) {
       this.setCurrentGame()
     }
   }
 
-  setCurrentGame = () => {
-    const currentGame = this.props.games.find(game => {
-      return game.id === parseInt(this.props.gameId)
+  setCurrentGame = async () => {
+    const response = await axios.get(`http://localhost:3000/users/1/games/${this.props.gameId}`)
+    const currentGame = response.data
+    console.log(currentGame)
+    this.setState({
+      currentGame
     })
-    this.setState({ currentGame })
   }
+
   createReview = async (userId, gameId, reviewData) => {
     const newReview = await postReview(userId, gameId, reviewData)
     this.setState(prevState => ({
