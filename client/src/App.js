@@ -79,7 +79,7 @@ class App extends Component {
     this.setState(prevState => ({
       games: [...prevState.games, newGame]
     }))
-    this.props.history.push('/games')
+    this.props.history.push(`/`)
   }
 
   async componentDidMount() {
