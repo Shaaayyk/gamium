@@ -41,8 +41,10 @@ Review.init({
 
 User.hasMany(Game, { onDelete: 'cascade' });
 Game.belongsTo(User);
+
 User.hasMany(Review, { onDelete: 'cascade' })
 Review.belongsTo(User);
+
 Game.hasMany(Review, { onDelete: 'cascade' })
 Review.belongsTo(Game);
 

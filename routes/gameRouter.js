@@ -6,7 +6,7 @@ const { restrict } = require('../services/auth');
 gameRouter.route('/')
   .get(async (req, res, next) => {
     try {
-      const games = await Game.findAll();
+      const games = await Game.findAll({ include: 'review' });
       res.json(games);
     } catch (e) {
       next(e)
@@ -27,7 +27,7 @@ gameRouter.route('/')
 gameRouter.route('/:id')
   .get(async (req, res, next) => {
     try {
-      const game = await Game.findByPk(req.params.id);
+      const game = await Game.findByPk(req.params.id, { include: 'review' });
       res.json(game);
     } catch (e) {
       next(e)

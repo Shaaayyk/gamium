@@ -90,6 +90,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.currentUser)
     return (
       <div className="App" >
         <Header currentUser={this.state.currentUser} handleLogout={this.handleLogout} />
@@ -119,7 +120,7 @@ class App extends Component {
           />
         )}
         />
-        <Route path='/games/new' render={() => (
+        <Route exact path='/games/new' render={() => (
           <CreateGameForm
             createGame={this.createGame}
             currentUser={this.state.currentUser}
@@ -132,7 +133,7 @@ class App extends Component {
             gameId={props.match.params.id}
           />
         )} />
-        <Route path='/users/:id' render={(props) => (
+        <Route path='/users/:id/games' render={(props) => (
           <UserProfile
             currentUser={this.state.currentUser}
           />
