@@ -13,7 +13,6 @@ export default class EditGames extends Component {
         name,
         description,
         image_url,
-        ...otherData
       } = this.props.games.find(game => {
         return game.id === parseInt(this.props.gameId)
       })

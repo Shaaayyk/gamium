@@ -12,7 +12,7 @@ export default class SingleGame extends Component {
 
   async componentDidMount() {
     this.setCurrentGame()
-    const reviews = await getReviews(this.props.currentUser, this.props.gameId)
+    const reviews = await getReviews(this.props.gameId)
     this.setState({
       reviews
     })

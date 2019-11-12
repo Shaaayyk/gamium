@@ -14,7 +14,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use('/auth/', userRouter);
 app.use('/users/:userId/games', gameRouter);
-app.use('/users/:userId/games/:gamesId/reviews', reviewRouter);
+app.use('/games/:gameId/reviews', reviewRouter);
 app.get('/games', async (req, res) => {
   const games = await Game.findAll();
   res.json(games)

@@ -66,10 +66,10 @@ class App extends Component {
     }
   }
 
-  updateGame = async (id, gamesData) => {
-    const updatedGame = await putGame(id, gamesData);
+  updateGame = async (gameId, gameData) => {
+    const updatedGame = await putGame(gameId, gameData);
     this.setState(prevState => ({
-      games: prevState.games.map(game => game.id === parseInt(id) ? updatedGame : game)
+      games: prevState.games.map(game => game.id === parseInt(gameId) ? updatedGame : game)
     }))
     this.props.history.push("/")
   }
@@ -122,7 +122,7 @@ class App extends Component {
         <Route path='/games/new' render={() => (
           <CreateGameForm
             createGame={this.createGame}
-            currentUser={this.currentUser}
+            currentUser={this.state.currentUser}
           />
         )} />
         <Route path='/game/:id/edit' render={(props) => (
