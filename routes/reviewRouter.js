@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const reviewRouter = Router();
-const { Review } = require('../models.js');
+const { Review, Game } = require('../models.js');
 const { restrict } = require('../services/auth');
 
 reviewRouter.route('/')
@@ -16,14 +16,22 @@ reviewRouter.route('/')
     try {
       const review = await Review.create({
         ...req.body,
-        userId: res.locals.user.id,
-        gameId: res.locals.game.id
+        gameId: req.params.gameId,
+        userId: res.locals.user.id
       });
       res.json(review);
     } catch (e) {
       next(e)
     }
   })
+// reviewRouter.post('/', async (req, res) => {
+//   const gameId = req.params.gameId
+//   const data = req.body
+//   const game = await Game.findByPk(gameId)
+//   const review = await Review.create(data)
+//   await review.setGame(game)
+//   res.json(review)
+// })
 
 reviewRouter.route('/:id')
   .get(async (req, res, next) => {

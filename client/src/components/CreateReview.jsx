@@ -20,9 +20,9 @@ export default class CreateReview extends Component {
       <div>
         <form onSubmit={(e) => {
           e.preventDefault()
-          this.props.createReview(this.props.currentUser, this.props.gameId, this.state)
+          this.props.createReview(this.props.gameId, this.state)
         }}>
-          <textarea placeholder='Write Review Here' id='review-text' name='review' value={this.state.review} onChange={this.handleChange}>
+          <textarea placeholder='Write Review Here' id='review' name='review' value={this.state.review} onChange={this.handleChange}>
           </textarea>
           <button>Submit Review</button>
         </form>
