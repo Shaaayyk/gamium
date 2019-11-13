@@ -13,7 +13,7 @@ export default class RegisterForm extends Component {
 
   render() {
     return (
-      <form onSubmit={(e) => {
+      <form className="content-wrap" id="register" onSubmit={(e) => {
         e.preventDefault()
         this.props.handleRegister(this.state)
         this.setState({
@@ -38,7 +38,7 @@ export default class RegisterForm extends Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <button>Submit</button>
+        <button id="registerButton">Submit</button>
         <br />
         <p>{this.props.authErrorMessage}</p>
       </form>
