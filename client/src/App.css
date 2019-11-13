@@ -1,9 +1,115 @@
 .App {
   font-family: 'Orbitron', sans-serif;
+  min-height: 100vh;
 }
-
+.content-wrap {
+  padding-bottom: 2.5rem;
+  padding-top: 0cm;
+}
+#login {
+  margin: 0;
+  background: url(https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif);
+  background-size: cover;
+  background-position: center;
+  color: rgb(12, 240, 12);
+  min-height: 100vh;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
+input#username {
+  width: 70px;
+  margin-left: 615px;
+  margin-top: 10px;
+}
+label {
+  margin-top: 10px;
+}
+input#password {
+  width: 70px;
+  margin-left: 615px;
+  margin-top: 10px;
+}
+#loginButton {
+  color: rgb(12, 240, 12);
+  background-color: black;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+  border: 3px solid rgb(12, 240, 12);
+  font-size: 30px;
+  padding: 1px;
+  margin-left: 550px;
+  margin-top: 10px;
+}
+#loginButton:hover {
+  background-color: rgb(12, 240, 12);
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+#register {
+  margin: 0;
+  background: url(https://media.giphy.com/media/pnxnMFqyoz9vO/giphy.gif);
+  background-size: cover;
+  background-position: center;
+  color: rgb(95, 225, 248);
+  min-height: 100vh;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+}
+#registerButton {
+  color: rgb(95, 225, 248);
+  background-color: black;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+  border: 3px solid rgb(95, 225, 248);
+  font-size: 30px;
+  padding: 1px;
+  margin-left: 550px;
+  margin-top: 10px;
+}
+#registerButton:hover {
+  background-color: rgb(95, 225, 248);
+  color: white;
+  transition: 0.3s ease-in-out;
+  }
+#createMain {
+  margin: 0;
+  background: url(https://media.giphy.com/media/ELham0Mveox9e/giphy.gif);
+  background-size: cover;
+  background-position: center;
+  color: rgb(248, 248, 19);
+  min-height: 100vh;
+}
+#create {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#createButton {
+  color: rgb(248, 248, 19);
+  background-color: black;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+  border: 3px solid rgb(248, 248, 19);
+  font-size: 30px;
+  padding: 1px;
+  margin-top: 10px;
+}
+#createButton:hover {
+  background-color: rgb(248, 248, 19);
+  color: rgb(248, 3, 3);
+  border: 3px solid rgb(248, 3, 3);
+  transition: 0.3s ease-in-out;
+}  
 a {
   text-decoration: none;
+  margin-top: 10px;
+  color: rgb(12, 240, 12);
 }
 #game-list {
   text-align: center;
@@ -29,9 +135,12 @@ a {
   margin-top: 30px;
 }
 footer {
-  height: 50px;
-  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  color: rgb(12, 240, 12);
   background: rgba(0, 0, 0, .1);
+  width: 100%;
+  height: 2.5rem;
   text-align: center;
   align-items: flex-end;
 }
