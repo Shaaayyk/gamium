@@ -89,6 +89,14 @@ nav {
 #header {
   display: flex;
 }
+#home {
+  color: rgba(255, 188, 94, 1);
+  margin: 0 10px 0 10px;
+}
+#home:hover {
+  color: rgba(153, 216, 255, 1);
+  transition-duration: .5s;
+}
 
 
 @keyframes fadein {
