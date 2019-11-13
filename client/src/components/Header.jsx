@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 export default function Header(props) {
   return (
     <nav>
-      <Link to='/'>Games</Link>
+      <Link to='/' id='home'>Games</Link>
       {
         props.currentUser ?
-          <div>
+          <div id='header'>
             <p>Hello, {props.currentUser.username}</p>
             <Link to='/games/new'>
               <button>Add Game</button>
