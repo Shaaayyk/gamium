@@ -6,8 +6,8 @@ export default function GameList(props) {
     <div id="game-list">
       {props.games.map(game => (
         <Link id='game-box' key={game.id} to={`/games/${game.id}`}>
-          <img src={game.image_url} alt={game.id} id='game-image' />
           <h3 id='game-name'>{game.name}</h3>
+          <img src={game.image_url} alt={game.id} id='game-image' />
         </Link>
       ))}
     </div>
