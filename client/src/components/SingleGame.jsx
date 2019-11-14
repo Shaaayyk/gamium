@@ -74,12 +74,9 @@ export default class SingleGame extends Component {
             <h1 id='single-game-title'>{currentGame.name}</h1>
             <div id='single-game-box'>
               <img src={currentGame.image_url} alt={currentGame.name} id='game-pic' />
-              <div id='description-box'>
-                <h3 id='description'>Description</h3>
-                <p id='game-description'>{currentGame.description}</p>
-              </div>
+              <p id='game-description'>{currentGame.description}</p>
             </div>
-            <div id='review-box'>
+            <div id='reviews-box'>
               <CreateReview
                 currentUser={currentUser}
                 gameId={this.props.gameId}

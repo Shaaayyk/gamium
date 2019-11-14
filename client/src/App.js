@@ -130,14 +130,14 @@ class App extends Component {
             currentUser={this.state.currentUser}
           />
         )} />
-        <Route path='/game/:id/edit' render={(props) => (
+        <Route exact path='/game/:id/edit' render={(props) => (
           <EditGames
             games={this.state.games}
             updateGame={this.updateGame}
             gameId={props.match.params.id}
           />
         )} />
-        <Route path='/users/:id/games' render={(props) => (
+        <Route exact path='/users/:id/games' render={(props) => (
           <UserProfile
             currentUser={this.state.currentUser}
             userId={props.match.params.id}
