@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom'
 export default function Header(props) {
   return (
     <nav>
-      <Link to='/' id='home'>Games</Link>
+      <Link to='/' id='home'>Gamium</Link>
       {
         props.currentUser ?
           <div id='header'>
             <p>Hello, {props.currentUser.username}</p>
-            <Link to='/games/new'>
-              <button>Add Game</button>
+            <Link to='/games/new' id='add'>
+              <a>Add Game</a>
             </Link>
-            <button onClick={props.handleLogout}>Logout</button>
+            <a onClick={props.handleLogout} id='logout'>Logout</a>
           </div>
           :
-          <Link to='/login'><button>Login/Register</button></Link>
+          <Link to='/login' id='login-nav'><a>Login/Register</a></Link>
       }
     </nav>
   )
