@@ -346,13 +346,18 @@ html {
   display: inline-block;
   margin-left: 50px;
 }
-
+#single-game {
+display: grid;
+grid-template-rows: 10% 1fr 1fr 1fr;
+}
+#single-game-box {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
 #game-info {
-  display: flex;
-  flex-direction: column;
   background: radial-gradient(circle, rgba(79,79,79,1) 11%, rgba(31,31,31,1) 87%);
   color: whitesmoke;
-  display: flex;
+  display: grid;
   flex-direction: column;
 }
 

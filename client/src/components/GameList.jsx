@@ -19,7 +19,7 @@ export default function GameList(props) {
         </div>
       </div>
       <div id='top-box'>
-        <h2 id='top'>Top Games</h2>
+        <h2 id='top'>Latest Games</h2>
       </div>
       {props.games.map(game => (
         <Link id='game-box' key={game.id} to={`/games/${game.id}`}>
