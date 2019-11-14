@@ -18,8 +18,8 @@ export default class CreateGameForm extends Component {
 
   render() {
     return (
-      <div id="createMain">
-        <form id="create" onSubmit={(e) => {
+      <div className="createMain">
+        <form className="create" onSubmit={(e) => {
           e.preventDefault()
           this.props.createGame(this.props.currentUser.id, this.state)
         }
@@ -33,7 +33,7 @@ export default class CreateGameForm extends Component {
           <label htmlFor="description">Description</label>
           <input type="text" id="description" name="description" value={this.state.description} onChange={this.handleChange} />
           <br />
-          <button id="createButton">Submit</button>
+          <button className="createButton">Submit</button>
         </form>
       </div>
     )

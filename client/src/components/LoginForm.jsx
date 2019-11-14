@@ -14,7 +14,7 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-      <form className="content-wrap" id="login" onSubmit={(e) => {
+      <form className="login" onSubmit={(e) => {
         e.preventDefault()
         this.props.handleLogin(this.state)
         this.setState({
@@ -39,8 +39,8 @@ export default class LoginForm extends Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <button id="loginButton">Submit</button>
-        <Link to='/register'>register</Link>
+        <button className="loginButton">Submit</button>
+        <Link to='/register' className="registerText">register</Link>
         <br />
         <p>{this.props.authErrorMessage}</p>
       </form>
