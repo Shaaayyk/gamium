@@ -8,7 +8,9 @@ export default function Header(props) {
       {
         props.currentUser ?
           <div id='header'>
-            <p>Hello, {props.currentUser.username}</p>
+            <Link to={`users/${props.currentUser.id}/games`}>
+              <p>{props.currentUser.username}</p>
+            </Link>
             <Link to='/games/new' id='add'>
               <a>Add Game</a>
             </Link>
@@ -17,6 +19,6 @@ export default function Header(props) {
           :
           <Link to='/login' id='login-nav'><a>Login/Register</a></Link>
       }
-    </nav>
+    </nav >
   )
 }
