@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { getUserGames } from '../services/api-helper'
+import { getUserGames, getOneUser } from '../services/api-helper'
 
 export default class UserProfile extends Component {
   state = {
-    userGames: []
+    userGames: [],
+    user: ''
   }
 
   componentDidMount() {
     this.setUserGames(this.props.userId)
+    this.setUser(this.props.userId)
   }
   componentDidUpdate(prevProps) {
     if (prevProps.gameId !== this.props.gameId) {
@@ -18,8 +20,14 @@ export default class UserProfile extends Component {
 
   setUserGames = async (userId) => {
     const userGames = await getUserGames(userId)
-    console.log(userGames)
     this.setState({ userGames })
+  }
+
+  setUser = async (userId) => {
+    const user = await getOneUser(userId)
+    this.setState({
+      user
+    })
   }
 
 
