@@ -15,9 +15,27 @@
   padding-bottom: 21rem;
   padding-top: 0cm;
 }
+
 p {
   margin: 0;
 }
+
+#gamium {
+  color: rgba(255, 152, 4, 1);
+  border-bottom: solid rgba(112, 200, 255, 1) 2px;
+  text-transform: uppercase;
+  width: 100%;
+  font-family: 'Squada One', cursive;
+}
+
+#mission {
+  color: rgba(255, 188, 94, 1);
+  font-family: 'Teko', sans-serif;
+  font-style: italic;
+  display: block;
+  width: 100%;
+}
+
 .login {
   margin: 0;
   background: url(https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif);
@@ -31,19 +49,23 @@ p {
   padding-bottom: 2.5rem;
   padding-top: 0cm;
 }
+
 input#username {
   width: 70px;
   margin-left: 615px;
   margin-top: 10px;
 }
+
 label {
   margin-top: 10px;
 }
+
 input#password {
   width: 70px;
   margin-left: 615px;
   margin-top: 10px;
 }
+
 .loginButton {
   color: rgba(255, 188, 94, 1);
   background-color: rgba(3, 4, 5, 1);
@@ -56,16 +78,18 @@ input#password {
   margin-left: 550px;
   margin-top: 10px;
 }
+
 .loginButton:hover {
   background-color: rgba(255, 188, 94, 1);
   color: rgba(3, 4, 5, 1);
   transition: 0.3s ease-in-out;
 }
+
 .registerText {
   color: rgba(255, 188, 94, 1);
   margin-top: 10px;
 }
- /* RegisterForm CSS */
+
 .register {
   margin: 0;
   background: url(https://media.giphy.com/media/pnxnMFqyoz9vO/giphy.gif);
@@ -79,6 +103,7 @@ input#password {
   padding-bottom: 2.5rem;
   padding-top: 0cm;
 }
+
 .registerButton {
   color: rgba(153, 216, 255, 1);
   background-color: rgba(3, 4, 5, 1);
@@ -91,12 +116,13 @@ input#password {
   margin-left: 550px;
   margin-top: 10px;
 }
+
 .registerButton:hover {
   background-color: rgba(153, 216, 255, 1);
   color: rgba(3, 4, 5, 1);;
   transition: 0.3s ease-in-out;
   }
- /* CreateGameForm CSS */
+
 .createMain {
   margin: 0;
   background: url(https://media.giphy.com/media/ELham0Mveox9e/giphy.gif);
@@ -107,12 +133,14 @@ input#password {
   padding-bottom: 2.5rem;
   padding-top: 0cm;
 }
+
 .create {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .createButton {
   color: rgba(255, 152, 4, 1);
   background-color: rgb(46, 100, 155);
@@ -124,29 +152,31 @@ input#password {
   padding: 1px;
   margin-top: 10px;
 }
+
 .createButton:hover {
   background-color: rgba(255, 152, 4, 1);
   color: rgba(3, 4, 5, 1);
   border: 3px solid rgba(112, 200, 255, 1);
   transition: 0.3s ease-in-out;
 }  
-/* end of CreateGameForm */
+
 a {
   text-decoration: none;
 }
+
 #game-list {
   text-align: center;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  background-color: #1F1F1F;
+  background: radial-gradient(circle, rgba(79,79,79,1) 11%, rgba(31,31,31,1) 87%);
 }
+
 #game-name {
   margin: 0;
-  /* margin-top: 40px;
-  margin-bottom: 40px; */
+  width: 80%;
   text-decoration: none;
-  color: rgba(112, 200, 255, 1);
+  color: rgba(153, 216, 255, 1);
   text-shadow: 0px 1px white;
   letter-spacing: 1px;
   z-index: 10;
@@ -155,17 +185,20 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0px 0 0 -170px;
 }
+
 #game-name:hover {
-  color: rgba(255, 152, 4, 1);
+  color: rgba(112, 200, 255, 1);
   transition-duration: 1s;
 }
+
 #game-box {
   border-bottom: solid rgba(112, 200, 255, 1) 2px ;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 80px;
+  margin-bottom: 60px;
   position: relative;
+  height: 340px;
 
   -webkit-animation: fadein 7s; 
   -moz-animation: fadein 7s; 
@@ -173,34 +206,58 @@ a {
     -o-animation: fadein 7s; 
        animation: fadein 7s;
 }
+
+#line {
+  width: 0px;
+  position: absolute;
+  display: block;
+  border: none;
+  border-bottom: solid rgba(255, 152, 4, 1) 4px;
+  top: 50%;
+  left: 50%;
+  margin: 0px 0 0 -170px;
+}
+
 #game-overlay {
   width: 450px;
   height: 300px;
-  background-color: rgba(7, 7, 7, .6);
+  background-color: rgba(7, 7, 7, .8);
   z-index: 100;
   position: absolute;
   opacity: 0;
   border-radius: 10px;
 }
+
 #game-overlay:hover, #game-name {
   opacity: 1;
-  transition: 1s;
+  transition: .8s;
 }
-footer {
 
+#game-overlay:hover #game-name {
+  transform: translateY(-80px);
+}
+
+#game-overlay:hover #line {
+  transition-delay: 1s;
+  transition: 2s;
+  width: 80%;
+
+}
+
+footer {
+  color: rgba(255, 188, 94, 1);
   height: 50px;
   padding: 10px;
-  background: #272727;
   text-align: center;
   align-items: flex-end;
-  color: rgba(255, 188, 94, 1);
-  border-top: solid rgba(112, 200, 255, 1) 2px;
-  
+  background: radial-gradient(circle, rgba(79,79,79,1) 11%, rgba(31,31,31,1) 87%);
 }
+
 html {
   height: 100%;
   text-align: center;
 }
+
 #game-pic {
   width: 90%;
   height: 80vh;
@@ -210,13 +267,14 @@ html {
 #game-info {
   display: flex;
   flex-direction: column;
-  background: #1F1F1F;
+  background: radial-gradient(circle, rgba(79,79,79,1) 11%, rgba(31,31,31,1) 87%);
   color: rgba(153, 216, 255, 1);
 }
 
 #single-game-title {
   font-size: 5rem;
   margin: 2%;
+  border-bottom: 1.5px solid rgba(153, 216, 255, 1);
 }
 
 #description {
@@ -226,11 +284,13 @@ html {
 
 #game-description {
   font-size: 2rem;
-  margin: 1% 5% 3% 5%;
+  padding: 1%;
+  margin: 1% 2% 3% 2%;
+  border-bottom: 1.5px solid rgba(153, 216, 255, 1);
 }
 
 #review-box {
-  margin: 1% 2%;
+  margin: 0 20%;
 }
 
 #create-review {
@@ -240,7 +300,15 @@ html {
 }
 
 #review-area {
-  padding: 1.5rem;
+  background: #1F1F1F;
+  border: none;
+  border-bottom: 1.5px solid rgba(255, 188, 94, 1);
+  color: rgba(153, 216, 255, 1);
+  font-size: 1.1rem;
+}
+
+::placeholder {
+  color: rgba(153, 216, 255, 1);
 }
 
 #submit-review {
@@ -264,7 +332,7 @@ html {
 
 nav {
   height: 50px;
-  background-color:#272727;
+  background-color: #222222;
   display: flex;
   flex-direction: row;
   align-content: flex-end;
@@ -276,6 +344,7 @@ nav {
   font-family: 'Teko', sans-serif;
   font-size: 25px;
 }
+
 #game-image {
   height: 300px; 
   overflow: hidden; 
@@ -284,20 +353,38 @@ nav {
   border-radius: 10px;
   margin: 0 0 30px 0;
 }
+
 #game-image {
   transition: transform .9s ease;
 }
+
 #game-image:hover {
   transform: scale(1.05);
 }
+
 #header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 80%;
   margin-right: 50px;
 }
+
+#header p, a {
+  padding: 10px;
+}
+
+#header a {
+  color: rgba(153, 216, 255, 1);
+  text-decoration: none;
+}
+
+#header a:hover {
+  color: rgba(255, 152, 4, 1);
+  transition-duration: 1s;
+}
+
 #home {
   color: rgba(255, 188, 94, 1);
   margin: 0 10px 0 10px;
@@ -305,20 +392,25 @@ nav {
   font-family: 'Squada One', cursive;
   text-transform: uppercase;
 }
+
 #home:hover {
   color: rgba(255, 152, 4, 1);  
   transition-duration: 1s;
 }
+
 #add, #login-nav {
   color: rgba(153, 216, 255, 1)
 }
+
 #add:hover, #login-nav:hover {
   color: rgba(255, 152, 4, 1);  
   transition-duration: 1s;
 }
+
 #logout {
   cursor: pointer;
 }
+
 #logout:hover {
   color: rgba(153, 216, 255, 1);
   transition-duration: 1s;
@@ -329,25 +421,21 @@ nav {
   to   { opacity: 1; }
 }
 
-/* Firefox < 16 */
 @-moz-keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-/* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-/* Internet Explorer */
 @-ms-keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-/* Opera < 12.1 */
 @-o-keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
