@@ -124,7 +124,7 @@ class App extends Component {
           />
         )}
         />
-        <Route exact path='/games/new' render={() => (
+        <Route exact path='/game/new' render={() => (
           <CreateGameForm
             createGame={this.createGame}
             currentUser={this.state.currentUser}

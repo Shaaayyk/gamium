@@ -38,7 +38,7 @@ export default class RegisterForm extends Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <button className="registerButton">Submit</button>
+        <button className="registerButton">Register</button>
         <br />
         <p>{this.props.authErrorMessage}</p>
       </form>

@@ -10,7 +10,7 @@ const main = async () => {
   })
 
   const admin = await User.create({
-    username: 'admin',
+    username: 'Admin',
     password_digest: '$2b$11$.nYwXq1np8noZ.0GMQAb5ebyYVFQpaRQrs4.G4SapO5iQhFaScDwe'
   })
 
