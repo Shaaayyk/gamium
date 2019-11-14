@@ -5,7 +5,6 @@ export default class CreateReview extends Component {
     review: '',
   }
 
-
   handleChange = (e) => {
     const { name, value } = e.target
     this.setState({
@@ -13,18 +12,16 @@ export default class CreateReview extends Component {
     })
   }
 
-
   render() {
-    console.log(this.props.gameId)
     return (
       <div>
-        <form onSubmit={(e) => {
+        <form id='create-review' onSubmit={(e) => {
           e.preventDefault()
           this.props.createReview(this.props.gameId, this.state)
         }}>
-          <textarea placeholder='Write Review Here' id='review' name='review' value={this.state.review} onChange={this.handleChange}>
+          <textarea placeholder='Write Review Here' id='review-area' name='review' value={this.state.review} onChange={this.handleChange}>
           </textarea>
-          <button>Submit Review</button>
+          <button id='submit-review'>Submit Review</button>
         </form>
       </div>
     )
