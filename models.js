@@ -22,7 +22,7 @@ User.init({
 class Game extends Sequelize.Model { };
 
 Game.init({
-  name: Sequelize.STRING,
+  name: Sequelize.STRING(30),
   image_url: Sequelize.TEXT,
   description: Sequelize.TEXT,
 }, {
