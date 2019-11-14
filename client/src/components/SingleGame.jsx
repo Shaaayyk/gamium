@@ -77,6 +77,8 @@ export default class SingleGame extends Component {
             <p id='game-description'>{currentGame.description}</p>
             <ReviewList
               reviews={reviews}
+              currentGame={currentGame}
+              currentUser={currentUser}
               destroyReview={this.destroyReview}
             />
             <CreateReview
@@ -85,7 +87,7 @@ export default class SingleGame extends Component {
               createReview={this.createReview}
             />
             {
-              currentUser && currentUser.id === currentGame.userId && (
+              currentUser.id === currentGame.userId && (
                 <div id='buttons'>
                   <Link to={`/game/${currentGame.id}/edit`}><button id='edit-game'>Edit Game</button></Link>
                   <button id='delete-game' onClick={() => {
