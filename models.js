@@ -1,13 +1,22 @@
 const Sequelize = require('sequelize');
 
-
-const sequelize = new Sequelize({
-  database: 'games_db',
-  dialect: 'postgres',
-  define: {
-    underscored: true
-  }
-});
+let sequelize;
+if (process.env.DATABASE_URL) {
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    define: {
+      underscored: true
+    }
+  });
+} else {
+  sequelize = new Sequelize({
+    database: 'games_db',
+    dialect: 'postgres',
+    define: {
+      underscored: true,
+    },
+  });
+}
 
 class User extends Sequelize.Model { };
 
