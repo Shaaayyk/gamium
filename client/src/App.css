@@ -8,20 +8,19 @@
   font-family: 'Orbitron', sans-serif;
   min-height: 100vh;
 }
-.content-wrap {
-  padding-bottom: 2.5rem;
-  padding-top: 0cm;
-}
-#login {
+/* LoginForm CSS */
+.login {
   margin: 0;
   background: url(https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif);
   background-size: cover;
   background-position: center;
-  color: rgb(12, 240, 12);
+  color: rgba(255, 188, 94, 1);
   min-height: 100vh;
   display: flex; 
   flex-direction: column; 
   justify-content: center; 
+  padding-bottom: 2.5rem;
+  padding-top: 0cm;
 }
 input#username {
   width: 70px;
@@ -36,86 +35,95 @@ input#password {
   margin-left: 615px;
   margin-top: 10px;
 }
-#loginButton {
-  color: rgb(12, 240, 12);
-  background-color: black;
+.loginButton {
+  color: rgba(255, 188, 94, 1);
+  background-color: rgba(3, 4, 5, 1);
   height: 50px;
   width: 200px;
   border-radius: 10px;
-  border: 3px solid rgb(12, 240, 12);
+  border: 3px solid rgba(255, 188, 94, 1);
   font-size: 30px;
   padding: 1px;
   margin-left: 550px;
   margin-top: 10px;
 }
-#loginButton:hover {
-  background-color: rgb(12, 240, 12);
-  color: white;
+.loginButton:hover {
+  background-color: rgba(255, 188, 94, 1);
+  color: rgba(3, 4, 5, 1);
   transition: 0.3s ease-in-out;
 }
-#register {
+.registerText {
+  color: rgba(255, 188, 94, 1);
+  margin-top: 10px;
+}
+ /* RegisterForm CSS */
+.register {
   margin: 0;
   background: url(https://media.giphy.com/media/pnxnMFqyoz9vO/giphy.gif);
   background-size: cover;
   background-position: center;
-  color: rgb(95, 225, 248);
+  color: rgba(153, 216, 255, 1);
   min-height: 100vh;
   display: flex; 
   flex-direction: column; 
   justify-content: center;
+  padding-bottom: 2.5rem;
+  padding-top: 0cm;
 }
-#registerButton {
-  color: rgb(95, 225, 248);
-  background-color: black;
+.registerButton {
+  color: rgba(153, 216, 255, 1);
+  background-color: rgba(3, 4, 5, 1);
   height: 50px;
   width: 200px;
   border-radius: 10px;
-  border: 3px solid rgb(95, 225, 248);
+  border: 3px solid rgba(153, 216, 255, 1);
   font-size: 30px;
   padding: 1px;
   margin-left: 550px;
   margin-top: 10px;
 }
-#registerButton:hover {
-  background-color: rgb(95, 225, 248);
-  color: white;
+.registerButton:hover {
+  background-color: rgba(153, 216, 255, 1);
+  color: rgba(3, 4, 5, 1);;
   transition: 0.3s ease-in-out;
   }
-#createMain {
+ /* CreateGameForm CSS */
+.createMain {
   margin: 0;
   background: url(https://media.giphy.com/media/ELham0Mveox9e/giphy.gif);
   background-size: cover;
   background-position: center;
-  color: rgb(248, 248, 19);
+  color: rgba(255, 152, 4, 1);
   min-height: 100vh;
+  padding-bottom: 2.5rem;
+  padding-top: 0cm;
 }
-#create {
+.create {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#createButton {
-  color: rgb(248, 248, 19);
-  background-color: black;
+.createButton {
+  color: rgba(255, 152, 4, 1);
+  background-color: rgba(3, 4, 5, 1);
   height: 50px;
   width: 200px;
   border-radius: 10px;
-  border: 3px solid rgb(248, 248, 19);
+  border: 3px solid rgba(255, 152, 4, 1);
   font-size: 30px;
   padding: 1px;
   margin-top: 10px;
 }
-#createButton:hover {
-  background-color: rgb(248, 248, 19);
-  color: rgb(248, 3, 3);
-  border: 3px solid rgb(248, 3, 3);
+.createButton:hover {
+  background-color: rgba(255, 152, 4, 1);
+  color: rgba(3, 4, 5, 1);
+  border: 3px solid rgba(112, 200, 255, 1);
   transition: 0.3s ease-in-out;
 }  
+/* end of CreateGameForm */
 a {
   text-decoration: none;
-  margin-top: 10px;
-  color: rgb(12, 240, 12);
 }
 #game-list {
   text-align: center;
