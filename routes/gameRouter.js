@@ -1,12 +1,17 @@
 const { Router } = require('express');
-const gameRouter = Router();
+const gameRouter = Router({ mergeParams: true });
 const { Game } = require('../models.js');
 const { restrict } = require('../services/auth');
 
 gameRouter.route('/')
   .get(async (req, res, next) => {
     try {
-      const games = await Game.findAll({ include: 'user' });
+      const userId = req.params.userId
+      const games = await Game.findAll({
+        where: {
+          userId
+        }
+      });
       res.json(games);
     } catch (e) {
       next(e)

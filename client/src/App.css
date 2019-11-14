@@ -21,11 +21,13 @@ p {
 }
 
 #gamium {
-  color: rgba(255, 152, 4, 1);
-  border-bottom: solid rgba(112, 200, 255, 1) 2px;
+  color: rgb(255, 119, 0);
   text-transform: uppercase;
   width: 100%;
   font-family: 'Squada One', cursive;
+  font-size: 10rem;
+  opacity: .7;
+  margin-bottom: -1%;
 }
 
 #mission {
@@ -34,6 +36,7 @@ p {
   font-style: italic;
   display: block;
   width: 100%;
+  margin: 0 10%;
 }
 
 .login {

@@ -3,7 +3,7 @@ import React from 'react'
 export default function ReviewList(props) {
   return (
     <>
-      {props.reviews.gameId === props.gameId ?
+      {
         props.reviews.map(review => (
           <div id='review-box'>
             <h4 id='review'>{review.review}</h4>
@@ -13,7 +13,6 @@ export default function ReviewList(props) {
             }
           </div>
         ))
-        : 'null'
       }
     </>
   )

@@ -34,10 +34,10 @@ export default class UserProfile extends Component {
   render() {
     return (
       <div id='user-game-list'>
+        <h1 id='profile-user'>{this.state.user.username}</h1>
         {
           this.state.userGames.map(game => (
             <>
-              <h1 id='profile-user'>username</h1>
               <Link id='game-box' key={game.id} to={`/games/${game.id}`}>
                 <img src={game.image_url} alt={game.id} />
                 <h3 id='game-name'>{game.name}</h3>
