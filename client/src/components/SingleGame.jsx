@@ -70,22 +70,28 @@ export default class SingleGame extends Component {
     return (
       <div id='game-info'>
         {currentGame && (
-          <>
+          <div id='single-game'>
             <h1 id='single-game-title'>{currentGame.name}</h1>
-            <img src={currentGame.image_url} alt={currentGame.name} id='game-pic' />
-            <h3 id='description'>Description</h3>
-            <p id='game-description'>{currentGame.description}</p>
-            <ReviewList
-              reviews={reviews}
-              currentGame={currentGame}
-              currentUser={currentUser}
-              destroyReview={this.destroyReview}
-            />
-            <CreateReview
-              currentUser={currentUser}
-              gameId={this.props.gameId}
-              createReview={this.createReview}
-            />
+            <div id='single-game-box'>
+              <img src={currentGame.image_url} alt={currentGame.name} id='game-pic' />
+              <div id='description-box'>
+                <h3 id='description'>Description</h3>
+                <p id='game-description'>{currentGame.description}</p>
+              </div>
+            </div>
+            <div id='review-box'>
+              <CreateReview
+                currentUser={currentUser}
+                gameId={this.props.gameId}
+                createReview={this.createReview}
+              />
+              <ReviewList
+                reviews={reviews}
+                currentGame={currentGame}
+                currentUser={currentUser}
+                destroyReview={this.destroyReview}
+              />
+            </div>
             {
               currentUser.id === currentGame.userId && (
                 <div id='buttons'>
@@ -98,7 +104,7 @@ export default class SingleGame extends Component {
                 </div>
               )
             }
-          </>
+          </div>
         )
         }
       </div >
