@@ -1,6 +1,6 @@
 .My-Color-Theme-1-rgba { color: rgba(3, 4, 5, 1); }
 .My-Color-Theme-2-rgba { color: rgba(112, 200, 255, 1); }
-.My-Color-Theme-3-rgba { color: rgba(153, 216, 255, 1);}
+.My-Color-Theme-3-rgba { color: whitesmoke;}
 .My-Color-Theme-4-rgba { color: rgba(255, 152, 4, 1); }
 .My-Color-Theme-5-rgba { color: rgba(255, 188, 94, 1);}
 
@@ -19,15 +19,53 @@
 p {
   margin: 0;
 }
+#hero {
+  background-size: cover;
+  height: 700px;
+  width: 90%;
+  position: relative;
+  -webkit-animation: fadein 6s; 
+  -moz-animation: fadein 6s; 
+   -ms-animation: fadein 6s; 
+    -o-animation: fadein 6s; 
+       animation: fadein 6s;
+}
+#hero > figure {
+    animation: imageAnimation 36s linear infinite 0s;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center center;
+    color: transparent;
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 0;
+    margin: 0;
+  }
+#hero > figure:nth-child(1) { background-image: url(https://desktopwallpaper.live/wp-content/uploads/2019/07/8k-resolution-gaming-wallpapers-11.jpg); }
+#hero > figure:nth-child(2) {
+  animation-delay: 6s;
+  background-image: url(https://desktopwallpaper.live/wp-content/uploads/2019/07/8k-resolution-gaming-wallpapers-15.jpg);
+}
+#hero > figure:nth-child(3) {
+  animation-delay: 12s;
+  background-image: url(https://desktopwallpaper.live/wp-content/uploads/2019/07/8k-resolution-gaming-wallpapers-25.jpg);
+}
+#hero > figure:nth-child(4) {
+  animation-delay: 18s;
+  background-image: url(https://desktopwallpaper.live/wp-content/uploads/2019/07/8k-resolution-gaming-wallpapers-29.jpg);
+}
+#hero > figure:nth-child(5) {
+  animation-delay: 24s;
+  background-image: url(https://i.imgur.com/jRyTIfN.jpg);
+}
 
-#gamium {
-  color: rgb(255, 119, 0);
-  text-transform: uppercase;
-  width: 100%;
-  font-family: 'Squada One', cursive;
-  font-size: 10rem;
-  opacity: .7;
-  margin-bottom: -1%;
+#hero > figure:nth-child(6) {
+    animation-delay: 30s;
+    background-image: url(https://i.imgur.com/OayRVd8.jpg);
 }
 
 #mission {
@@ -35,6 +73,42 @@ p {
   font-family: 'Teko', sans-serif;
   font-style: italic;
   display: block;
+  width: 40%;
+  margin: 0 30% 0 30%;
+  letter-spacing: 2px;
+  text-shadow: black 2px 2px;
+  position: absolute;
+  top: 30%;
+  height: 100px;
+  margin-top: -50px;
+
+  -webkit-animation: fadein 6s; 
+  -moz-animation: fadein 6s; 
+   -ms-animation: fadein 6s; 
+    -o-animation: fadein 6s; 
+       animation: fadein 6s;
+}
+#title-box {
+width: 100%;
+}
+#mission-box {
+width: 100%;
+}
+#top {
+  color: rgba(255, 152, 4, 1);
+  border-bottom: solid whitesmoke 2px;
+  text-transform: uppercase;
+  width: 80%;
+  font-family: 'Teko', sans-serif;
+  margin: 10px 10% 0 10%;
+
+  -webkit-animation: fadein 6s; 
+  -moz-animation: fadein 6s; 
+   -ms-animation: fadein 6s; 
+    -o-animation: fadein 6s; 
+       animation: fadein 6s;
+}
+#top-box {
   width: 100%;
   margin: 0 10%;
 }
@@ -98,7 +172,7 @@ input#password {
   background: url(https://media.giphy.com/media/pnxnMFqyoz9vO/giphy.gif);
   background-size: cover;
   background-position: center;
-  color: rgba(153, 216, 255, 1);
+  color: whitesmoke;
   min-height: 100vh;
   display: flex; 
   flex-direction: column; 
@@ -108,12 +182,12 @@ input#password {
 }
 
 .registerButton {
-  color: rgba(153, 216, 255, 1);
+  color: whitesmoke;
   background-color: rgba(3, 4, 5, 1);
   height: 50px;
   width: 200px;
   border-radius: 10px;
-  border: 3px solid rgba(153, 216, 255, 1);
+  border: 3px solid whitesmoke;
   font-size: 30px;
   padding: 1px;
   margin-left: 550px;
@@ -121,7 +195,7 @@ input#password {
 }
 
 .registerButton:hover {
-  background-color: rgba(153, 216, 255, 1);
+  background-color: whitesmoke;
   color: rgba(3, 4, 5, 1);;
   transition: 0.3s ease-in-out;
   }
@@ -146,7 +220,7 @@ input#password {
 
 .createButton {
   color: rgba(255, 152, 4, 1);
-  background-color: rgba(3, 4, 5, 1);
+  background-color: rgb(46, 100, 155);
   height: 50px;
   width: 200px;
   border-radius: 10px;
@@ -179,7 +253,7 @@ a {
   margin: 0;
   width: 80%;
   text-decoration: none;
-  color: rgba(153, 216, 255, 1);
+  color: whitesmoke;
   text-shadow: 0px 1px white;
   letter-spacing: 1px;
   z-index: 10;
@@ -192,16 +266,15 @@ a {
 }
 
 #game-name:hover {
-  color: rgba(112, 200, 255, 1);
   transition-duration: 1s;
 }
 
 #game-box {
-  border-bottom: solid rgba(112, 200, 255, 1) 2px ;
   margin-top: 80px;
   margin-bottom: 60px;
   position: relative;
   height: 340px;
+  
 
   -webkit-animation: fadein 7s; 
   -moz-animation: fadein 7s; 
@@ -246,6 +319,11 @@ a {
   width: 80%;
 
 }
+#game-overlay:hover #details {
+  opacity: 1;
+  transform: translateY(-80px);
+  transition-delay: 2s;
+}
 
 footer {
   color: rgba(255, 188, 94, 1);
@@ -253,7 +331,8 @@ footer {
   padding: 10px;
   text-align: center;
   align-items: flex-end;
-  background: radial-gradient(circle, rgba(79,79,79,1) 11%, rgba(31,31,31,1) 87%);
+  background: #1F1F1F;
+  border-top: solid whitesmoke 1px;
 }
 
 html {
@@ -262,34 +341,41 @@ html {
 }
 
 #game-pic {
-  width: 90%;
-  height: 80vh;
-  margin: 2% auto 0 auto;
+  width: 40%;
+  height: 400px;
+  display: inline-block;
+  margin-left: 50px;
 }
 
 #game-info {
   display: flex;
   flex-direction: column;
   background: radial-gradient(circle, rgba(79,79,79,1) 11%, rgba(31,31,31,1) 87%);
-  color: rgba(153, 216, 255, 1);
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
 }
 
 #single-game-title {
   font-size: 5rem;
   margin: 2%;
-  border-bottom: 1.5px solid rgba(153, 216, 255, 1);
+  border-bottom: 1.5px solid whitesmoke;
+  text-align: left;
 }
 
 #description {
   font-size: 3rem;
   margin: 2%;
+  display: inline-block;
+  width: 20%;
 }
 
 #game-description {
+  display: inline-block;
   font-size: 2rem;
   padding: 1%;
   margin: 1% 2% 3% 2%;
-  border-bottom: 1.5px solid rgba(153, 216, 255, 1);
+  border-bottom: 1.5px solid whitesmoke;
 }
 
 #review-box {
@@ -303,15 +389,16 @@ html {
 }
 
 #review-area {
-  background: #1F1F1F;
+  background: rgba(0,0,0,0);
   border: none;
   border-bottom: 1.5px solid rgba(255, 188, 94, 1);
-  color: rgba(153, 216, 255, 1);
+  color: whitesmoke;
   font-size: 1.1rem;
+  padding: 0;
 }
 
 ::placeholder {
-  color: rgba(153, 216, 255, 1);
+  color: whitesmoke;
 }
 
 #submit-review {
@@ -340,7 +427,7 @@ nav {
   flex-direction: row;
   align-content: flex-end;
   color: rgba(255, 188, 94, 1);
-  border-bottom: solid rgba(112, 200, 255, 1) 2px;
+  border-bottom: solid whitesmoke 2px;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px 0 20px;
@@ -355,6 +442,7 @@ nav {
   object-fit: cover;
   border-radius: 10px;
   margin: 0 0 30px 0;
+  box-shadow: #222222 8px 8px;
 }
 
 #game-image {
@@ -379,7 +467,7 @@ nav {
 }
 
 #header a {
-  color: rgba(153, 216, 255, 1);
+  color: whitesmoke;
   text-decoration: none;
 }
 
@@ -398,16 +486,16 @@ nav {
 
 #home:hover {
   color: rgba(255, 152, 4, 1);  
-  transition-duration: 1s;
+  transition-duration: 1.5s;
 }
 
 #add, #login-nav {
-  color: rgba(153, 216, 255, 1)
+  color: whitesmoke
 }
 
 #add:hover, #login-nav:hover {
   color: rgba(255, 152, 4, 1);  
-  transition-duration: 1s;
+  transition-duration: 1.5s;
 }
 
 #logout {
@@ -415,7 +503,7 @@ nav {
 }
 
 #logout:hover {
-  color: rgba(153, 216, 255, 1);
+  color: whitesmoke;
   transition-duration: 1s;
 }
 
@@ -443,4 +531,22 @@ nav {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
+@keyframes
+imageAnimation {  0% {
+ animation-timing-function: ease-in;
+ opacity: 0;
+}
+ 8% {
+ animation-timing-function: ease-out;
+ opacity: 1;
+}
+ 17% {
+ opacity: 1
+}
+ 25% {
+ opacity: 0
+}
+ 100% {
+ opacity: 0
+}
+}
