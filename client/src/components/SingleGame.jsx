@@ -30,6 +30,7 @@ export default class SingleGame extends Component {
       reviews
     })
   }
+
   async componentDidUpdate(prevProps) {
     if (prevProps.gameId !== this.props.gameId) {
       this.setCurrentGame()
@@ -37,7 +38,6 @@ export default class SingleGame extends Component {
   }
 
   setCurrentGame = async () => {
-
     const response = await axios.get(`http://localhost:3000/games/${this.props.gameId}`)
     const currentGame = response.data
     this.setState({
@@ -72,11 +72,9 @@ export default class SingleGame extends Component {
         {currentGame && (
           <>
             <img src={currentGame.image_url} alt={currentGame.name} id='game-pic' />
-            <h1>{currentGame.name}</h1>
-            <h3>Description</h3>
-            <p>{currentGame.description}</p>
-            <Link to={`/users/${this.state.user.id}/games`}>{`${this.state.user.username}`}</Link>
-
+            <h1 id='single-game-title'>{currentGame.name}</h1>
+            <h3 id='description'>Description</h3>
+            <p id='game-description'>{currentGame.description}</p>
             <ReviewList
               reviews={reviews}
               destroyReview={this.destroyReview}
@@ -88,14 +86,14 @@ export default class SingleGame extends Component {
             />
             {
               currentUser && currentUser.id === currentGame.userId && (
-                <>
-                  <button onClick={() => {
+                <div id='buttons'>
+                  <Link to={`/game/${currentGame.id}/edit`}><button id='edit-game'>Edit Game</button></Link>
+                  <button id='delete-game' onClick={() => {
                     this.props.destroyGame(currentUser.id, currentGame.id)
                   }}>
                     Delete Game
                     </button>
-                  <Link to={`/game/${currentGame.id}/edit`}><button>Edit Game</button></Link>
-                </>
+                </div>
               )
             }
           </>
