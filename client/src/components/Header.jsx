@@ -11,7 +11,7 @@ export default function Header(props) {
             <Link to={`users/${props.currentUser.id}/games`}>
               <p>{props.currentUser.username}</p>
             </Link>
-            <Link to='/games/new' id='add'>
+            <Link to='/game/new' id='add'>
               <a>Add Game</a>
             </Link>
             <a onClick={props.handleLogout} id='logout'>Logout</a>

@@ -12,6 +12,8 @@ export default function GameList(props) {
         <figure></figure>
         <figure></figure>
         <figure></figure>
+        <figure></figure>
+        <figure></figure>
         <div id='title-box'>
         </div>
         <div id='mission-box'>

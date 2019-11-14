@@ -31,7 +31,7 @@ p {
        animation: fadein 6s;
 }
 #hero > figure {
-    animation: imageAnimation 36s linear infinite 0s;
+    animation: imageAnimation 48s linear infinite 0s;
     backface-visibility: hidden;
     background-size: cover;
     background-position: center center;
@@ -66,6 +66,14 @@ p {
 #hero > figure:nth-child(6) {
     animation-delay: 30s;
     background-image: url(https://i.imgur.com/OayRVd8.jpg);
+}
+#hero > figure:nth-child(7) {
+  animation-delay: 36s;
+  background-image: url(https://i.imgur.com/HkdyXlR.jpg);
+}
+#hero > figure:nth-child(8) {
+  animation-delay: 42s;
+  background-image: url(https://i.imgur.com/Vkz74jE.png);
 }
 
 #mission {
@@ -112,53 +120,59 @@ width: 100%;
   width: 100%;
   margin: 0 10%;
 }
-
-.login {
-  margin: 0;
-  background: url(https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif);
-  background-size: cover;
-  background-position: center;
-  color: rgba(255, 188, 94, 1);
-  min-height: 100vh;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  padding-bottom: 2.5rem;
-  padding-top: 0cm;
+label {
+  width: 40%;
 }
 
+#login-page {
+min-height: 90vh;
+width: 400px;
+display: flex;
+justify-content: center;
+align-items: baseline;
+flex-direction: row;
+flex-wrap: wrap;
+}
+#login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 input#username {
-  width: 70px;
-  margin-left: 615px;
+  width: 50%;
   margin-top: 10px;
+  border: none;
+  background-color: none;
+  border-bottom: solid black 2px;
+  margin-bottom: 10%;
+  font-size: 1em;
 }
-
+#form-title {
+  width: 100%;
+  margin: 20% 0 0 0;
+}
 label {
   margin-top: 10px;
+  font-size: 1em;
 }
 
 input#password {
-  width: 70px;
-  margin-left: 615px;
+  width: 50%;
   margin-top: 10px;
+  border-bottom: solid black 2px;
+  margin-bottom: 10%;
+  font-size: 1em;
 }
 
 .loginButton {
-  color: rgba(255, 188, 94, 1);
-  background-color: rgba(3, 4, 5, 1);
-  height: 50px;
-  width: 200px;
-  border-radius: 10px;
-  border: 3px solid rgba(255, 188, 94, 1);
-  font-size: 30px;
-  padding: 1px;
-  margin-left: 550px;
-  margin-top: 10px;
+  font-size: 1em;
+  color: rgba(255, 152, 4, 1);
+  background-color: none;
+  border: none;
 }
 
 .loginButton:hover {
-  background-color: rgba(255, 188, 94, 1);
-  color: rgba(3, 4, 5, 1);
+  color: black;
   transition: 0.3s ease-in-out;
 }
 
@@ -169,7 +183,6 @@ input#password {
 
 .register {
   margin: 0;
-  background: url(https://media.giphy.com/media/pnxnMFqyoz9vO/giphy.gif);
   background-size: cover;
   background-position: center;
   color: whitesmoke;
@@ -216,6 +229,8 @@ input#password {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: solid rgba(255, 152, 4, 1) 5px;
+  border-radius: 100px;
 }
 
 .createButton {
@@ -236,6 +251,9 @@ input#password {
   border: 3px solid rgba(112, 200, 255, 1);
   transition: 0.3s ease-in-out;
 }  
+#username, #password{
+border: none;
+}
 
 a {
   text-decoration: none;
@@ -247,6 +265,7 @@ a {
   justify-content: space-evenly;
   flex-wrap: wrap;
   background: radial-gradient(circle, rgba(79,79,79,1) 11%, rgba(31,31,31,1) 87%);
+  min-height: 90vh;
 }
 
 #game-name {
@@ -438,6 +457,13 @@ nav {
   padding: 0 40px 0 20px;
   font-family: 'Teko', sans-serif;
   font-size: 25px;
+}
+#profile-user {
+  display: inline-block;
+  color: whitesmoke;
+  width: 30%;
+  border-bottom: solid rgba(255, 152, 4, 1) 1px;
+  margin: 5% 35% 0 35%;
 }
 
 #game-image {
