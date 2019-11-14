@@ -125,31 +125,34 @@ label {
 }
 
 #login-page {
-min-height: 90vh;
 width: 400px;
 display: flex;
 justify-content: center;
 align-items: baseline;
 flex-direction: row;
 flex-wrap: wrap;
+height: 50%;
 }
 #login-box {
   display: flex;
   justify-content: center;
-  align-items: center;
+  background: #222222;
+  color: rgba(255, 188, 94, 1);
+  min-height: 90vh;
 }
 input#username {
   width: 50%;
-  margin-top: 10px;
   border: none;
   background-color: none;
-  border-bottom: solid black 2px;
+  border-bottom: solid whitesmoke 2px;
   margin-bottom: 10%;
   font-size: 1em;
+  color: rgba(255, 152, 4, 1);
 }
 #form-title {
   width: 100%;
   margin: 20% 0 0 0;
+  color: whitesmoke;
 }
 label {
   margin-top: 10px;
@@ -158,27 +161,34 @@ label {
 
 input#password {
   width: 50%;
-  margin-top: 10px;
-  border-bottom: solid black 2px;
-  margin-bottom: 10%;
+  border-bottom: solid whitesmoke 2px;
   font-size: 1em;
+  color: rgba(255, 152, 4, 1)
 }
 
 .loginButton {
   font-size: 1em;
-  color: rgba(255, 152, 4, 1);
-  background-color: none;
+  color: whitesmoke;
+  background-color: #222222;
   border: none;
+  cursor: pointer;
+  font-family: 'Teko', sans-serif;
 }
 
 .loginButton:hover {
-  color: black;
-  transition: 0.3s ease-in-out;
+
+  color: rgba(255, 152, 4, 1);
+  transition: 0.5s ease-in-out;
 }
 
 .registerText {
-  color: rgba(255, 188, 94, 1);
+  color: whitesmoke;
   margin-top: 10px;
+  font-family: 'Teko', sans-serif;
+}
+.registerText:hover {
+  color: rgba(255, 152, 4, 1); 
+  transition: 0.5s ease-in-out;
 }
 
 .register {
@@ -192,6 +202,7 @@ input#password {
   justify-content: center;
   padding-bottom: 2.5rem;
   padding-top: 0cm;
+  background-color: #222222;
 }
 
 .registerButton {
@@ -253,6 +264,7 @@ input#password {
 }  
 #username, #password{
 border: none;
+background-color: #222222;
 }
 
 a {

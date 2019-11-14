@@ -41,7 +41,7 @@ export default class LoginForm extends Component {
             onChange={this.handleChange}
           />
           <button className="loginButton">Login</button>
-          <Link to='/register' className="registerText">register</Link>
+          <Link to='/register' className="registerText">Register</Link>
           <br />
           <p>{this.props.authErrorMessage}</p>
         </form>
