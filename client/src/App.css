@@ -18,7 +18,7 @@
 p {
   margin: 0;
 }
-#login {
+.login {
   margin: 0;
   background: url(https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif);
   background-size: cover;
@@ -115,7 +115,7 @@ input#password {
 }
 .createButton {
   color: rgba(255, 152, 4, 1);
-  background-color: rgba(3, 4, 5, 1);
+  background-color: rgb(46, 100, 155);
   height: 50px;
   width: 200px;
   border-radius: 10px;
