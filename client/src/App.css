@@ -110,6 +110,7 @@ width: 100%;
 }
 #top-box {
   width: 100%;
+  margin: 0 10%;
 }
 
 .login {
@@ -526,7 +527,7 @@ nav {
   to   { opacity: 1; }
 }
 
-m@-o-keyframes fadein {
+@-o-keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
