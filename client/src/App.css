@@ -19,6 +19,7 @@
 p {
   margin: 0;
 }
+
 #hero {
   background-size: cover;
   height: 700px;
@@ -30,6 +31,7 @@ p {
     -o-animation: fadein 6s; 
        animation: fadein 6s;
 }
+
 #hero > figure {
     animation: imageAnimation 48s linear infinite 0s;
     backface-visibility: hidden;
@@ -45,19 +47,24 @@ p {
     z-index: 0;
     margin: 0;
   }
+
 #hero > figure:nth-child(1) { background-image: url(https://desktopwallpaper.live/wp-content/uploads/2019/07/8k-resolution-gaming-wallpapers-11.jpg); }
+
 #hero > figure:nth-child(2) {
   animation-delay: 6s;
   background-image: url(https://desktopwallpaper.live/wp-content/uploads/2019/07/8k-resolution-gaming-wallpapers-15.jpg);
 }
+
 #hero > figure:nth-child(3) {
   animation-delay: 12s;
   background-image: url(https://desktopwallpaper.live/wp-content/uploads/2019/07/8k-resolution-gaming-wallpapers-25.jpg);
 }
+
 #hero > figure:nth-child(4) {
   animation-delay: 18s;
   background-image: url(https://desktopwallpaper.live/wp-content/uploads/2019/07/8k-resolution-gaming-wallpapers-29.jpg);
 }
+
 #hero > figure:nth-child(5) {
   animation-delay: 24s;
   background-image: url(https://i.imgur.com/jRyTIfN.jpg);
@@ -67,10 +74,12 @@ p {
     animation-delay: 30s;
     background-image: url(https://i.imgur.com/OayRVd8.jpg);
 }
+
 #hero > figure:nth-child(7) {
   animation-delay: 36s;
   background-image: url(https://i.imgur.com/HkdyXlR.jpg);
 }
+
 #hero > figure:nth-child(8) {
   animation-delay: 42s;
   background-image: url(https://i.imgur.com/Vkz74jE.png);
@@ -96,12 +105,15 @@ p {
     -o-animation: fadein 6s; 
        animation: fadein 6s;
 }
+
 #title-box {
 width: 100%;
 }
+
 #mission-box {
 width: 100%;
 }
+
 #top {
   color: rgba(255, 152, 4, 1);
   border-bottom: solid whitesmoke 2px;
@@ -116,10 +128,12 @@ width: 100%;
     -o-animation: fadein 6s; 
        animation: fadein 6s;
 }
+
 #top-box {
   width: 100%;
   margin: 0 10%;
 }
+
 label {
   width: 40%;
 }
@@ -133,6 +147,7 @@ flex-direction: row;
 flex-wrap: wrap;
 height: 50%;
 }
+
 #login-box {
   display: flex;
   justify-content: center;
@@ -140,6 +155,7 @@ height: 50%;
   color: rgba(255, 188, 94, 1);
   min-height: 90vh;
 }
+
 input#username {
   width: 50%;
   border: none;
@@ -148,12 +164,15 @@ input#username {
   margin-bottom: 10%;
   font-size: 1em;
   color: rgba(255, 152, 4, 1);
+  outline: none;
 }
+
 #form-title {
   width: 100%;
   margin: 20% 0 0 0;
   color: whitesmoke;
 }
+
 label {
   margin-top: 10px;
   font-size: 1em;
@@ -189,23 +208,10 @@ input#password {
   border: none;
   font-size: 1em;
 }
+
 .registerText:hover {
   color: rgba(255, 152, 4, 1); 
   transition: 0.5s ease-in-out;
-}
-
-.register {
-  margin: 0;
-  background-size: cover;
-  background-position: center;
-  color: whitesmoke;
-  min-height: 100vh;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center;
-  padding-bottom: 2.5rem;
-  padding-top: 0cm;
-  background-color: #222222;
 }
 
 .registerButton {
@@ -258,6 +264,7 @@ input#password {
   color: rgba(255, 152, 4, 1);
   transition: 0.3s ease-in-out;
 }  
+
 #username, #password{
 border: none;
 background-color: #222222;
@@ -344,8 +351,8 @@ a {
   transition-delay: 1s;
   transition: 2s;
   width: 80%;
-
 }
+
 #game-overlay:hover #details {
   opacity: 1;
   transform: translateY(-80px);
@@ -416,10 +423,19 @@ grid-template-rows: 10% 1fr 1fr 10%;
   background: #222222;
   border: none;
   border-bottom: solid whitesmoke 2px;
+  outline: none;
 }
 
 #create-box {
   margin-top: 2%;
+}
+
+#display-name {
+  padding: 0; 
+  margin: 0 21%;
+  margin-bottom: -2.5%;
+  font-size: 1.8rem;
+  text-align: left;
 }
 
 #review-box {
@@ -427,6 +443,19 @@ grid-template-rows: 10% 1fr 1fr 10%;
   border: 1.5px solid whitesmoke;
   border-radius: 10px;
   align-items: flex-start;
+}
+
+#delete-review {
+  text-align: right;
+  margin-bottom: -.5%;
+  margin-right: 2%;
+  color: whitesmoke;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#delete-review:hover {
+  color: rgba(255, 188, 94, 1);
 }
 
 #review {
@@ -447,6 +476,7 @@ grid-template-rows: 10% 1fr 1fr 10%;
   font-size: 1.1rem;
   padding: 0;
   margin-top: 4%;
+  outline: none;
 }
 
 ::placeholder {
@@ -456,10 +486,23 @@ grid-template-rows: 10% 1fr 1fr 10%;
 
 #submit-review {
   margin: 3% 30%;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: whitesmoke;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+}
+
+#submit-review:hover {
+  color: rgba(255, 188, 94, 1);
 }
 
 #delete-game {
   margin: 1% 40%;
+  cursor: pointer;
 }
 
 #edit-game {
@@ -471,6 +514,15 @@ grid-template-rows: 10% 1fr 1fr 10%;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   margin-bottom: 2%;
+}
+
+#buttons h5 {
+  color: whitesmoke;
+  transition: 0.5s ease-in-out;
+}
+
+#buttons h5:hover {
+  color: rgba(255, 188, 94, 1);
 }
 
 nav {
@@ -487,6 +539,7 @@ nav {
   font-family: 'Teko', sans-serif;
   font-size: 25px;
 }
+
 #profile-user {
   display: inline-block;
   color: whitesmoke;

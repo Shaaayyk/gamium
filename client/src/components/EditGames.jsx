@@ -40,24 +40,33 @@ export default class EditGames extends Component {
   }
 
   render() {
+    window.scrollTo(0, 0)
     const { name, image_url, description } = this.state;
-
     return (
-      <div>
-        <form onSubmit={(e) => {
+      <div className="createMain" id='login-box'>
+        <form className='create' id='login-page' onSubmit={(e) => {
           e.preventDefault();
           this.props.updateGame(this.props.gameId, this.state);
         }}>
-          <label htmlFor="title">title</label>
+          <label htmlFor="title">Title</label>
           <input
             type="text"
             name="name"
-            id="name"
+            id="username"
             value={name}
             onChange={this.handleChange}
           />
           <br />
-          <label htmlFor="description">description</label>
+          <label htmlFor="image_url">Image Url</label>
+          <input
+            type="text"
+            name="image_url"
+            id="username"
+            value={image_url}
+            onChange={this.handleChange}
+          />
+          <br />
+          <label htmlFor="description">Description</label>
           <input
             type="text"
             name="description"
@@ -66,16 +75,7 @@ export default class EditGames extends Component {
             onChange={this.handleChange}
           />
           <br />
-          <label htmlFor="image_url">image url</label>
-          <input
-            type="text"
-            name="image_url"
-            id="image_url"
-            value={image_url}
-            onChange={this.handleChange}
-          />
-          <br />
-          <button>Submit</button>
+          <button className="createButton">Submit</button>
         </form>
       </div>
     )

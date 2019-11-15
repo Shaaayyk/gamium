@@ -32,6 +32,7 @@ export default class UserProfile extends Component {
 
 
   render() {
+    window.scrollTo(0, 0)
     return (
       <div id='game-list'>
         <h1 id='profile-user'>{this.state.user.username}'s Games</h1>

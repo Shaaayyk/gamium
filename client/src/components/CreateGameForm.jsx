@@ -25,7 +25,7 @@ export default class CreateGameForm extends Component {
         }
         }>
           <label htmlFor="name">Name of Game</label>
-          <input type="text" id="username" name="name" value={this.state.name} onChange={this.handleChange} />
+          <input autoFocus type="text" id="username" name="name" value={this.state.name} onChange={this.handleChange} />
           <br />
           <label htmlFor="image_url">Image url</label>
           <input type="text" id="username" name="image_url" value={this.state.image_url} onChange={this.handleChange} />

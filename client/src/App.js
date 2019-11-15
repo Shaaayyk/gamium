@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Link, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { getAllGames, registerUser, loginUser, verifyUser, deleteGame, putGame, postGame, deleteReview } from './services/api-helper'
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
@@ -48,6 +48,7 @@ class App extends Component {
       currentUser: null
     })
     localStorage.removeItem('authToken')
+    this.props.history.push('/')
   }
 
   handleVerify = async () => {
