@@ -8,7 +8,7 @@ export default function Header(props) {
       {
         props.currentUser ?
           <div id='header'>
-            <Link to={`users/${props.currentUser.id}/games`}>
+            <Link to={`/users/${props.currentUser.id}/games`}>
               <p>{props.currentUser.username}</p>
             </Link>
             <Link to='/game/new' id='add'>
