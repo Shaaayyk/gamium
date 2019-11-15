@@ -3,7 +3,7 @@ import React from 'react'
 export default function ReviewList(props) {
   return (
     <>
-      {props.reviews &&
+      {props.currentUser &&
         props.reviews.map(review => (
           <div id='review-container'>
             {review.user &&
