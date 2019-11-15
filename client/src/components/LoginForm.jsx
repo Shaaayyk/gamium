@@ -16,7 +16,7 @@ export default class LoginForm extends Component {
     window.scrollTo(0, 0)
     return (
       <div id='login-box'>
-        <form className="login" id='login-page' onSubmit={(e) => {
+        <form className="login" id='login-page' autoComplete='off' onSubmit={(e) => {
           e.preventDefault()
           this.props.handleLogin(this.state)
           this.setState({

@@ -424,6 +424,7 @@ grid-template-rows: 10% 1fr 1fr 10%;
   border: none;
   border-bottom: solid whitesmoke 2px;
   outline: none;
+  color: rgba(255, 152, 4, 1)
 }
 
 #create-box {
@@ -444,6 +445,10 @@ grid-template-rows: 10% 1fr 1fr 10%;
   border-radius: 10px;
   align-items: flex-start;
 }
+#review-box:hover #delete-review {
+opacity: 1;
+transition-duration: 1s;
+}
 
 #delete-review {
   text-align: right;
@@ -452,6 +457,7 @@ grid-template-rows: 10% 1fr 1fr 10%;
   color: whitesmoke;
   transition: 0.5s ease-in-out;
   cursor: pointer;
+  opacity: 0
 }
 
 #delete-review:hover {

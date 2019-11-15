@@ -6,7 +6,9 @@ export default function ReviewList(props) {
       {props.reviews &&
         props.reviews.map(review => (
           <div id='review-container'>
-            <h2 id='display-name'>{review.user.username}</h2>
+            {review.user &&
+              <h2 id='display-name'>{review.user.username}</h2>
+            }
             <div id='review-box'>
               <h4 id='review'>{review.review}</h4>
               {
