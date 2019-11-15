@@ -113,7 +113,13 @@ class App extends Component {
             authErrorMessage={this.state.authErrorMessage}
           />
         )} />
-        <Route exact path='/games/:id' render={(props) => (
+        <Route path='/users/:id/games' render={(props) => (
+          <UserProfile
+            currentUser={this.state.currentUser}
+            userId={props.match.params.id}
+          />
+        )} />
+        <Route path='/oneGame/:id' render={(props) => (
           <SingleGame
             games={this.state.games}
             currentUser={this.state.currentUser}
@@ -135,12 +141,6 @@ class App extends Component {
             games={this.state.games}
             updateGame={this.updateGame}
             gameId={props.match.params.id}
-          />
-        )} />
-        <Route path='/users/:id/games' render={(props) => (
-          <UserProfile
-            currentUser={this.state.currentUser}
-            userId={props.match.params.id}
           />
         )} />
         <Footer />

@@ -368,19 +368,22 @@ html {
 }
 
 #game-pic {
-  width: 40%;
-  height: 400px;
-  display: inline-block;
-  margin-left: 50px;
+  width: 100%;
+  height: 80vh;
+  margin-left: 6%;
 }
+
 #single-game {
 display: grid;
-grid-template-rows: 10% 1fr 1fr 1fr;
+grid-template-rows: 10% 1fr 1fr 10%;
 }
+
 #single-game-box {
   display:grid;
   grid-template-columns: 1fr 1fr;
+  margin-top: 3%;
 }
+
 #game-info {
   background: radial-gradient(circle, rgba(79,79,79,1) 11%, rgba(31,31,31,1) 87%);
   color: whitesmoke;
@@ -390,8 +393,18 @@ grid-template-rows: 10% 1fr 1fr 1fr;
 
 #single-game-title {
   font-size: 5rem;
-  margin: 2%;
+  margin: 0 1%;
+  padding-bottom: 8%;
   border-bottom: 1.5px solid whitesmoke;
+  color: rgba(255, 188, 94, 1);
+  width: 80%;
+  justify-self: center;
+}
+
+#game-description {
+  font-size: 2.2rem;
+  padding: 1%;
+  margin: 1% 6% 3% 12%;
   text-align: left;
 }
 
@@ -405,22 +418,25 @@ grid-template-rows: 10% 1fr 1fr 1fr;
   border-bottom: solid whitesmoke 2px;
 }
 
-#game-description {
-  display: inline-block;
-  font-size: 2rem;
-  padding: 1%;
-  margin: 1% 2% 3% 2%;
-  border-bottom: 1.5px solid whitesmoke;
+#create-box {
+  margin-top: 2%;
 }
 
 #review-box {
-  margin: 0 20%;
+  margin: 2% 20%;
+  border: 1.5px solid whitesmoke;
+  border-radius: 10px;
+  align-items: flex-start;
+}
+
+#review {
+  margin: 0 1.5%;
 }
 
 #create-review {
   display: flex;
   flex-direction: column;
-  margin: 0% 35% 2% 35%;
+  margin: 0% 2% 2% 2%;
 }
 
 #review-area {
@@ -430,10 +446,12 @@ grid-template-rows: 10% 1fr 1fr 1fr;
   color: whitesmoke;
   font-size: 1.1rem;
   padding: 0;
+  margin-top: 4%;
 }
 
 ::placeholder {
   color: whitesmoke;
+  padding-left: 2%;
 }
 
 #submit-review {

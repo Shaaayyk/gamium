@@ -38,7 +38,7 @@ export default class UserProfile extends Component {
         {
           this.state.userGames.map(game => (
             <>
-              <Link id='game-box' key={game.id} to={`/games/${game.id}`}>
+              <Link id='game-box' key={game.id} to={`/oneGame/${game.id}`}>
                 <div id='game-overlay'>
                   <h3 id='game-name'>{game.name}</h3>
                   <line id='line'></line>
