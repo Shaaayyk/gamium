@@ -62,6 +62,7 @@ export default class SingleGame extends Component {
 
 
   render() {
+    window.scrollTo(0, 0)
     const { currentGame } = this.state
     const { currentUser } = this.props;
     const reviews = this.state.reviews.filter(review => (
@@ -92,12 +93,12 @@ export default class SingleGame extends Component {
             {
               currentUser.id === currentGame.userId && (
                 <div id='buttons'>
-                  <Link to={`/game/${currentGame.id}/edit`}><button id='edit-game'>Edit Game</button></Link>
-                  <button id='delete-game' onClick={() => {
+                  <Link to={`/game/${currentGame.id}/edit`}><h5 id='edit-game'>Edit Game</h5></Link>
+                  <h5 id='delete-game' onClick={() => {
                     this.props.destroyGame(currentUser.id, currentGame.id)
                   }}>
                     Delete Game
-                    </button>
+                    </h5>
                 </div>
               )
             }

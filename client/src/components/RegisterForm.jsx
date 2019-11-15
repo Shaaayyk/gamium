@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class RegisterForm extends Component {
   state = {
@@ -12,6 +13,7 @@ export default class RegisterForm extends Component {
   }
 
   render() {
+    window.scrollTo(0, 0)
     return (
       <div id='login-box'>
         <form className="register" id='login-page' onSubmit={(e) => {
@@ -23,15 +25,16 @@ export default class RegisterForm extends Component {
           })
         }}>
           <h2 id='form-title'>Register</h2>
-          <label htmlFor="username">username</label>
+          <label htmlFor="username">Username</label>
           <input
+            autoFocus
             name="username"
             id="username"
             type="text"
             value={this.state.username}
             onChange={this.handleChange}
           />
-          <label htmlFor="password">password</label>
+          <label htmlFor="password">Password</label>
           <input
             name="password"
             id="password"
@@ -41,6 +44,7 @@ export default class RegisterForm extends Component {
           />
           <button className="registerText">Register</button>
           <br />
+          <Link className='loginButton' to='/login'>Login</Link>
           <p>{this.props.authErrorMessage}</p>
         </form>
       </div>

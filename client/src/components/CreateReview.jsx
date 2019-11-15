@@ -20,7 +20,7 @@ export default class CreateReview extends Component {
           this.props.createReview(this.props.gameId, this.state)
           this.setState({ review: '' })
         }}>
-          <textarea placeholder='Write Review Here' id='review-area' name='review' value={this.state.review} onChange={this.handleChange}>
+          <textarea autoFocus placeholder='Write Review Here' id='review-area' name='review' value={this.state.review} onChange={this.handleChange}>
           </textarea>
           <button id='submit-review'>Submit Review</button>
         </form>

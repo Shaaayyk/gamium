@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function GameList(props) {
+  window.scrollTo(0, 0)
   return (
     <div id="game-list">
       <div id='hero'>

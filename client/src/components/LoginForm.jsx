@@ -13,6 +13,7 @@ export default class LoginForm extends Component {
   }
 
   render() {
+    window.scrollTo(0, 0)
     return (
       <div id='login-box'>
         <form className="login" id='login-page' onSubmit={(e) => {
@@ -24,15 +25,16 @@ export default class LoginForm extends Component {
           })
         }}>
           <h2 id="form-title">Login</h2>
-          <label htmlFor="username">username</label>
+          <label htmlFor="username">Username</label>
           <input
+            autoFocus
             name="username"
             id="username"
             type="text"
             value={this.state.username}
             onChange={this.handleChange}
           />
-          <label htmlFor="password">password</label>
+          <label htmlFor="password">Password</label>
           <input
             name="password"
             id="password"
