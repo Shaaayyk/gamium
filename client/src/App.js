@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, withRouter } from 'react-router-dom';
-import { getAllGames, registerUser, loginUser, verifyUser, deleteGame, putGame, postGame, deleteReview } from './services/api-helper'
+import { getAllGames, registerUser, loginUser, verifyUser, deleteGame, putGame, postGame } from './services/api-helper'
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import GameList from './components/GameList';

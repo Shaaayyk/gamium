@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CreateReview from './CreateReview'
-import { postReview, getReviews, getOneGame, getOneUser, deleteReview } from '../services/api-helper'
+import { postReview, getReviews, getOneUser, deleteReview } from '../services/api-helper'
 import ReviewList from './ReviewList'
 import axios from 'axios';
 
@@ -33,7 +33,13 @@ export default class SingleGame extends Component {
 
   async componentDidUpdate(prevProps) {
     if (prevProps.gameId !== this.props.gameId) {
+      console.log('yo')
       this.setCurrentGame()
+      await this.setUser(this.state.currentGame.userId)
+      const reviews = await getReviews(this.props.gameId)
+      this.setState({
+        reviews
+      })
     }
   }
 
@@ -62,11 +68,10 @@ export default class SingleGame extends Component {
 
 
   render() {
-    window.scrollTo(0, 0)
     const { currentGame } = this.state
     const { currentUser } = this.props;
     const reviews = this.state.reviews.filter(review => (
-      review.gameId == currentGame.id
+      review.gameId === currentGame.id
     ))
     return (
       <div id='game-info'>
