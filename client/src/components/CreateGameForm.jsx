@@ -18,17 +18,17 @@ export default class CreateGameForm extends Component {
 
   render() {
     return (
-      <div className="createMain">
-        <form className="create" onSubmit={(e) => {
+      <div className="createMain" id='login-box'>
+        <form className="create" id='login-page' onSubmit={(e) => {
           e.preventDefault()
           this.props.createGame(this.props.currentUser.id, this.state)
         }
         }>
-          <label htmlFor="name">name</label>
-          <input type="text" id="name" name="name" value={this.state.name} onChange={this.handleChange} />
+          <label htmlFor="name">Name of Game</label>
+          <input type="text" id="username" name="name" value={this.state.name} onChange={this.handleChange} />
           <br />
           <label htmlFor="image_url">Image url</label>
-          <input type="text" id="image_url" name="image_url" value={this.state.image_url} onChange={this.handleChange} />
+          <input type="text" id="username" name="image_url" value={this.state.image_url} onChange={this.handleChange} />
           <br />
           <label htmlFor="description">Description</label>
           <input type="text" id="description" name="description" value={this.state.description} onChange={this.handleChange} />
