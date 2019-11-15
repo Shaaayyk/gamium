@@ -13,35 +13,37 @@ export default class RegisterForm extends Component {
 
   render() {
     return (
-      <form className="register" onSubmit={(e) => {
-        e.preventDefault()
-        this.props.handleRegister(this.state)
-        this.setState({
-          username: '',
-          password: ''
-        })
-      }}>
-        <h2>Register</h2>
-        <label htmlFor="username">username</label>
-        <input
-          name="username"
-          id="username"
-          type="text"
-          value={this.state.username}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="password">password</label>
-        <input
-          name="password"
-          id="password"
-          type="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-        />
-        <button className="registerButton">Register</button>
-        <br />
-        <p>{this.props.authErrorMessage}</p>
-      </form>
+      <div id='login-box'>
+        <form className="register" id='login-page' onSubmit={(e) => {
+          e.preventDefault()
+          this.props.handleRegister(this.state)
+          this.setState({
+            username: '',
+            password: ''
+          })
+        }}>
+          <h2 id='form-title'>Register</h2>
+          <label htmlFor="username">username</label>
+          <input
+            name="username"
+            id="username"
+            type="text"
+            value={this.state.username}
+            onChange={this.handleChange}
+          />
+          <label htmlFor="password">password</label>
+          <input
+            name="password"
+            id="password"
+            type="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+          />
+          <button className="registerText">Register</button>
+          <br />
+          <p>{this.props.authErrorMessage}</p>
+        </form>
+      </div>
     )
   }
 }
