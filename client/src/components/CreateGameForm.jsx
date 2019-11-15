@@ -19,7 +19,7 @@ export default class CreateGameForm extends Component {
   render() {
     return (
       <div className="createMain" id='login-box'>
-        <form className="create" id='login-page' onSubmit={(e) => {
+        <form className="create" id='login-page' autoComplete='off' onSubmit={(e) => {
           e.preventDefault()
           this.props.createGame(this.props.currentUser.id, this.state)
         }

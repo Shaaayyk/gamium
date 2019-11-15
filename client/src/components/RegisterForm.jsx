@@ -16,7 +16,7 @@ export default class RegisterForm extends Component {
     window.scrollTo(0, 0)
     return (
       <div id='login-box'>
-        <form className="register" id='login-page' onSubmit={(e) => {
+        <form className="register" id='login-page' autoComplete='off' onSubmit={(e) => {
           e.preventDefault()
           this.props.handleRegister(this.state)
           this.setState({
